@@ -1,3 +1,4 @@
+0.0.3
 const path = require('path');
 const winapi = require('winapi-bindings');
 const { fs, log, util } = require('vortex-api');
@@ -5,8 +6,6 @@ const { fs, log, util } = require('vortex-api');
 const NEXUS_GAME_ID = 'outward';
 const STEAMAPP_ID = '794260';
 const GOGAPP_ID = '2147483078';
-
-const GAME_ART = 'gameart.jpg';
 
 // Need to confirm if this is the right ID for epic store
 // const EPICAPP_ID = 'b9fcb93638bc4ff4baa77cc0a71ded42';
@@ -122,19 +121,23 @@ function showMonoBranchInstructions(api) {
 function checkBepInExInstallation(discovery, api) {
     return fs.readFileAsync(path.join(discovery.path, 'BepInEx', 'core', 'BepInEx.dll'))
         .catch(() => {
-            api.sendNotification({
-                id: 'bepinex-missing',
-                type: 'warning',
-                title: 'BepInEx not installed',
-                message: `Bepinex is required to mod Outward.`,
-                actions: [
-                    {
-                        title: 'Install BepInEx',
-                        action: () => showBepInExInstructions(api)
-                    }
-                ]
-            });
+            sendBepinexMissingNotification
         });
+}
+
+function sendBepinexMissingNotification(api) {
+    api.sendNotification({
+        id: 'partiality-wrapper-missing',
+        type: 'warning',
+        title: 'Partiality Wrapper not installed',
+        message: `BepInEx's Partiality Wrapper is required to install partiality mods.`,
+        actions: [
+            {
+                title: 'Install Partiality Wrapper',
+                action: () => showBepInExInstructions(api)
+            }
+        ]
+    });
 }
 
 function showBepInExInstructions(api) {
@@ -156,19 +159,23 @@ function showBepInExInstructions(api) {
 function checkPartialityWrapperInstallation(discovery, api) {
     return fs.readFileAsync(path.join(discovery.path, 'BepInEx', 'plugins', 'PartialityWrapper', 'Partiality.dll'))
         .catch(() => {
-            api.sendNotification({
-                id: 'partiality-wrapper-missing',
-                type: 'warning',
-                title: 'Partiality Wrapper not installed',
-                message: `BepInEx's Partiality Wrapper is required to install partiality mods.`,
-                actions: [
-                    {
-                        title: 'Install Partiality Wrapper',
-                        action: () => showPartialityInstructions(api)
-                    }
-                ]
-            });
+            sendPartialityMissingNotification(api);
         });
+}
+
+function sendPartialityMissingNotification(api) {
+    api.sendNotification({
+        id: 'partiality-wrapper-missing',
+        type: 'warning',
+        title: 'Partiality Wrapper not installed',
+        message: `BepInEx's Partiality Wrapper is required to install partiality mods.`,
+        actions: [
+            {
+                title: 'Install Partiality Wrapper',
+                action: () => showPartialityInstructions(api)
+            }
+        ]
+    });
 }
 
 function showPartialityInstructions(api) {
@@ -188,22 +195,17 @@ function showPartialityInstructions(api) {
 }
 
 function testSupportedContent(files, gameId, api) {
+    if (gameId !== NEXUS_GAME_ID) {
+        return Promise.resolve({ supported: false, requiredFiles: [] });
+    }
+
     let supported = false;
 
-    if (gameId === NEXUS_GAME_ID) {
-        if (isBepInExMod(files)) {
-            supported = true;
-
-        } else if (isMaybePartialityMod(files)) {
-            supported = true;
-
-            api.sendNotification({
-                id: 'partiality-mod',
-                type: 'info',
-                title: 'Partiality mods compatibility not guaranteed',
-                message: 'If this mod causes issues, you might have to install it manually.'
-            });
-        }
+    if (isBepInExMod(files)) {
+        supported = true;
+    } else if (isMaybePartialityMod(files)) {
+        supported = true;
+        sendPartialityModNotification(api);
     }
 
     // For some reason if supported is false it installs the mod anyway
@@ -214,13 +216,26 @@ function testSupportedContent(files, gameId, api) {
             requiredFiles: [],
         });
     } else {
-        api.sendNotification({
-            id: 'incompatible-mod',
-            type: 'error',
-            title: 'Incompatible Mod',
-            message: 'This mod is not supported. You will need to install it manually.'
-        })
+        sendIncompatibleModNotification(api);
     }
+}
+
+function sendPartialityModNotification(api) {
+    api.sendNotification({
+        id: 'partiality-mod',
+        type: 'info',
+        title: 'Partiality mods compatibility not guaranteed',
+        message: 'If this mod causes issues, you might have to install it manually.'
+    });
+}
+
+function sendIncompatibleModNotification(api) {
+    api.sendNotification({
+        id: 'incompatible-mod',
+        type: 'error',
+        title: 'Incompatible Mod',
+        message: 'This mod is not supported. You will need to install it manually.'
+    })
 }
 
 function isBepInExMod(files) {
