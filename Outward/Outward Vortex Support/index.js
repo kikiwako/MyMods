@@ -11,7 +11,7 @@ const GAME_ART = 'gameart.jpg';
 // Need to confirm if this is the right ID for epic store
 // const EPICAPP_ID = 'b9fcb93638bc4ff4baa77cc0a71ded42';
 
-const BEPINEX_DOWNLOAD = "https://github.com/BepInEx/BepInEx/releases/tag/v5.4.3";
+const BEPINEX_DOWNLOAD = "https://github.com/BepInEx/BepInEx/releases";
 const PARTIALITY_WRAPPER_DOWNLOAD = "https://github.com/sinai-dev/BepInEx-Partiality-Wrapper/releases";
 
 const MONO_BRANCH_WIKI = "https://outward.gamepedia.com/Installing_Mods#Modding_Branch";
