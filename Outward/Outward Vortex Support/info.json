@@ -1,0 +1,10 @@
+{
+  "name": "Game support - Outward",
+  "author": "Wistipouf",
+  "version": "0.0.2",
+  "description": "Support for Outward",
+  "type": "game",
+  "path": "C:\\Users\\Kikiwako\\AppData\\Roaming\\Vortex\\plugins\\Outward Support Extension-191-0-0-2-1607463643.zip",
+  "bundled": false,
+  "modId": 191
+}
