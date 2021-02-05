@@ -1,4 +1,3 @@
-0.0.3
 const path = require('path');
 const winapi = require('winapi-bindings');
 const { fs, log, util } = require('vortex-api');
