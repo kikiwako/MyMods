@@ -7,11 +7,11 @@ using UnityEngine;
 using HarmonyLib;
 using SharedModConfig;
 using System.Collections.Generic;
+using BepInEx.Configuration;
 
 namespace OffCenterTargeting
 {
     [BepInPlugin(ID, NAME, VERSION)]
-    [BepInDependency("com.sinai.SharedModConfig", BepInDependency.DependencyFlags.HardDependency)]
     public class OffCenterTargeting : BaseUnityPlugin
     {
         const string ID = "com.wistpouf.offCenterTargeting";
@@ -19,7 +19,6 @@ namespace OffCenterTargeting
         const string VERSION = "2.0";
 
         public static OffCenterTargeting Instance;
-        public ModConfig offCenterConfig;
 
         internal void Start()
         {
@@ -28,32 +27,7 @@ namespace OffCenterTargeting
             var harmony = new Harmony(ID);
             harmony.PatchAll();
 
-            offCenterConfig = SetupConfig();
-            offCenterConfig.Register();
-        }
-
-        private ModConfig SetupConfig()
-        {
-
-            var config = new ModConfig
-            {
-                ModName = "Off Center Targeting",
-                SettingsVersion = 1.0,
-                Settings = new List<BBSetting>()
-                {
-                    new FloatSetting
-                    {
-                        Name = "OffCenterAmount",
-                        Description = "Off Center Amount",
-                        DefaultValue = .6f,
-                        MaxValue = 1f,
-                        MinValue = 0f,
-                        RoundTo = 1,
-                        ShowPercent = false
-                    }
-}
-            };
-            return config;
+            ModConfig.Init(Config);
         }
 
         [HarmonyPatch(typeof(CharacterCamera), "Update")]
@@ -68,7 +42,7 @@ namespace OffCenterTargeting
                 var self = __instance;
 
                 float targetAngle = -90;
-                float rotationAmount = (float)Instance.offCenterConfig.GetValue("OffCenterAmount");
+                float rotationAmount = ModConfig.offCenterAmount.Value;
 
                 Vector3 targetPosition = new Vector3(
                     self.LookAtTransform.transform.position.x,
@@ -96,6 +70,24 @@ namespace OffCenterTargeting
                     }
                 }
             }
+        }
+    }
+
+    public static class ModConfig
+    {
+        public static ConfigEntry<float> offCenterAmount;
+
+        public static void Init(ConfigFile config)
+        {
+            offCenterAmount = config.Bind(
+                "OffCenter",
+                "Off-Center Amount",
+                .6f,
+                new ConfigDescription(
+                    "Sets how high in the screen the target is.",
+                    new AcceptableValueRange<float>(0f, 1f)
+                )
+            );
         }
     }
 }
