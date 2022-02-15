@@ -39,6 +39,10 @@ namespace OffCenterTargeting
                 Transform ___m_cameraVertHolder
                 )
             {
+                float fps = 1f / Time.deltaTime;
+                float correction = fps / 60f;
+                correction = 1f;
+
                 var self = __instance;
 
                 float targetAngle = -90;
@@ -62,11 +66,11 @@ namespace OffCenterTargeting
 
                     if (angle < targetAngle)
                     {
-                        ___m_cameraVertHolder.Rotate(-rotationAmount, 0f, 0f);
+                        ___m_cameraVertHolder.Rotate(-rotationAmount * correction, 0f, 0f);
                     }
                     else if (angle > targetAngle)
                     {
-                        ___m_cameraVertHolder.Rotate(rotationAmount, 0f, 0f);
+                        ___m_cameraVertHolder.Rotate(rotationAmount * correction, 0f, 0f);
                     }
                 }
             }
@@ -85,7 +89,7 @@ namespace OffCenterTargeting
                 .6f,
                 new ConfigDescription(
                     "Sets how high in the screen the target is.",
-                    new AcceptableValueRange<float>(0f, 1f)
+                    new AcceptableValueRange<float>(0f, 100f)
                 )
             );
         }

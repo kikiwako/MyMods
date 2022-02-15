@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SL_Character xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <!-- The UID is important! Make sure you set a unique identifier. -->
+  <!-- This UID is used by OnSpawn callbacks, and can also be used for the actual Character UID. -->
+  <UID>com.wistipouf.nuriel.hire</UID>
+
+  <!-- One of: Temporary, Scene or Follower -->
+  <SaveType>Scene</SaveType>
+
+  <!-- Character's Name -->
+  <Name>Nuriel</Name>
+
+    <!-- I'm setting up the dialogue through C# -->
+  <InitialDialogue>Error! Could not set up custom dialogue!</InitialDialogue>
+
+  <!-- Scene-Spawn information -->
+  <!-- The SceneToSpawn corresponds to the scene builds names (listed on Wiki and SL Menu) -->
+  <SceneToSpawn>CierzoNewTerrain</SceneToSpawn>
+  
+  <!-- Used if SceneToSpawn is set. -->
+  <!-- Get SpawnPosition with SL Menu Tools tab, or F2 Debug Mode "Debug Position" -->
+  <SpawnPosition>
+    <x>1415.0</x>
+    <y>6.0</y>
+    <z>1660.0</z>
+  </SpawnPosition>
+  <SpawnRotation>
+    <x>0</x>
+    <y>350</y>
+    <z>0</z>
+  </SpawnRotation>
+  
+  <!-- Generally use either "NONE", "Player" or "Bandits", there are other options too (Character.Factions) -->
+  <Faction>NONE</Faction>
+  
+  <!-- If you want to set manual targetable factions, uncomment and set them here. -->
+  <!-- <TargetableFactions>
+    <Factions>Player</Factions>
+  </TargetableFactions> -->
+  
+  <!-- Human character visual data. Corresponds to Character Creation options. -->
+  <CharacterVisualsData>
+    <Gender>Male</Gender>
+    <!-- Skin Index is ethnicity (0 aurai / 1 tramon / 2 kazite, -999 trog) -->
+    <SkinIndex>1</SkinIndex>
+    <HeadVariationIndex>0</HeadVariationIndex>
+    <HairColorIndex>1</HairColorIndex>
+    <HairStyleIndex>2</HairStyleIndex>
+  </CharacterVisualsData>
+
+  <!-- Choose the gear item IDs here -->
+  <!-- Iron Axe -->
+  <Weapon_ID>2010000</Weapon_ID> 
+  <!-- Round Shield -->
+  <Shield_ID>2300000</Shield_ID>
+  <!-- Adventurer set -->
+  <Helmet_ID>3000021</Helmet_ID>
+  <Chest_ID>3000020</Chest_ID>
+  <Boots_ID>3000022</Boots_ID>
+  <Backpack_ID>5300000</Backpack_ID>
+
+  <!-- Set Character Stats here -->
+  <Health>150</Health>
+  <HealthRegen>1</HealthRegen>
+  <ImpactResist>10</ImpactResist>
+  <Protection>5</Protection>
+  <Barrier>5</Barrier>
+  
+  <Damage_Resists>
+    <float>2</float> <!-- phys -->
+    <float>2</float> <!-- ether -->
+    <float>2</float> <!-- decay -->
+    <float>2</float> <!-- light -->
+    <float>2</float> <!-- frost -->
+    <float>2</float> <!-- fire -->
+  </Damage_Resists>
+  
+  <Damage_Bonus>
+    <float>0</float> <!-- phys -->
+    <float>0</float> <!-- ether -->
+    <float>0</float> <!-- decay -->
+    <float>0</float> <!-- light -->
+    <float>0</float> <!-- frost -->
+    <float>0</float> <!-- fire -->
+  </Damage_Bonus>
+  
+  <!-- This corresponds to Tags on statuses (eg Bleeding, Poison)... -->
+  <Status_Immunity>
+    <!-- <string>Bleeding</string>
+    <string>Poison</string> -->
+  </Status_Immunity>
+</SL_Character>
