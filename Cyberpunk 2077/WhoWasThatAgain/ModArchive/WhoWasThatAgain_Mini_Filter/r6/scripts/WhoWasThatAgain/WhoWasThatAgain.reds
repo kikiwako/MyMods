@@ -14,10 +14,6 @@ module WhoWasThatAgain
       sms_messenger_slot <--
 */
 class MakeAvatarBeegTM extends ScriptableSystem {
-  private let LOGGING: Bool = false;
-  private let logText: String = "";
-  public let logCount: Uint32 = 0u;
-  //
   public let contactUiRoot: wref<inkCompoundWidget>;
   //
   public let centralContainer: wref<inkVerticalPanel>;
@@ -36,98 +32,31 @@ class MakeAvatarBeegTM extends ScriptableSystem {
 
   public func areAllUiElementsDefined() -> Bool {
     if !IsDefined(this.contactUiRoot) {
-      this.log("contactUiRoot is not defined");
       return false;
     }
     if !IsDefined(this.centralContainer) {
-      this.log("centralContainer is not defined");
       return false;
     }
     if !IsDefined(this.contactAvatar) {
-      this.log("contactAvatar is not defined");
       return false;
     }
     if !IsDefined(this.avatarHolder) {
-      this.log("avatarHolder is not defined");
       return false;
     }
     if !IsDefined(this.avatarDummy) {
-      this.log("avatarDummy is not defined");
       return false;
     }
     if !IsDefined(this.smsMessengerSlot) {
-      this.log("smsMessengerSlot is not defined");
       return false;
     }
 
-    this.log("All needed UI elements are defined");
     return true;
   }
 
-  public func log(txt: String) {
-    this.logInline(s"\n[WhoWasThatAgain] [\(this.logCount)] \(txt)");
-  }
-
-  public func logInline(txt: String) {
-    if this.LOGGING {
-      this.logText += txt;
-    }
-  }
-
-  public func logAll() {
-    if this.LOGGING {
-      this.logWidget(this.contactUiRoot);
-
-      this.logWidget(this.centralContainer);
-      this.logWidget(this.contactAvatar);
-      this.logWidget(this.avatarHolder);
-      this.logWidget(this.avatarDummy);
-      this.logWidget(this.smsMessengerSlot);
-    }
-  }
-
-  public func logWidget(widget: wref<inkCompoundWidget>) {
-    let scale = widget.GetScale();
-    let translation = widget.GetTranslation();
-    let shear = widget.GetShear();
-    let opacity = widget.GetOpacity();
-
-    this.log("--------------------------");
-
-    this.log(NameToString(widget.GetName()));
-
-    this.log(s"    Scale X:\(scale.X) Y:\(scale.Y)");
-    this.log(s"    Translation X:\(translation.X) Y:\(translation.Y)");
-    this.log(s"    Shear X:\(shear.X) Y:\(shear.Y)");
-    this.log(s"    Opacity :\(opacity)");
-  }
-
-  public func logWidget(widget: wref<inkWidget>) {
-    let scale = widget.GetScale();
-    let translation = widget.GetTranslation();
-    let shear = widget.GetShear();
-    let opacity = widget.GetOpacity();
-
-    this.log("--------------------------");
-
-    this.log(NameToString(widget.GetName()));
-
-    this.log(s"    Scale X:\(scale.X) Y:\(scale.Y)");
-    this.log(s"    Translation X:\(translation.X) Y:\(translation.Y)");
-    this.log(s"    Shear X:\(shear.X) Y:\(shear.Y)");
-    this.log(s"    Opacity :\(opacity)");
-  }
-
   public func InitWidgets() {
-    this.logText = "";
-    this.log("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n");
-
     if this.areAllUiElementsDefined() {
-      this.log("Skipping initialization");
       return;
     }
-
-    this.log("Starting initialization");
 
     let window = GameInstance
       .GetInkSystem()
@@ -138,9 +67,6 @@ class MakeAvatarBeegTM extends ScriptableSystem {
     let numChildren = rootWidget.GetNumChildren();
 
     if !IsDefined(this.contactUiRoot) {
-      this.log("Attempts to find UI Root:");
-      this.log(" ");
-
       let i = 0;
 
       while i < numChildren && i < 100 {
@@ -156,8 +82,6 @@ class MakeAvatarBeegTM extends ScriptableSystem {
 
         i = i + 1;
       }
-    } else {
-      this.log("contactUiRoot is already defined");
     }
 
     this.findAndSetSmsMessengerSlot();
@@ -171,7 +95,6 @@ class MakeAvatarBeegTM extends ScriptableSystem {
     if !Equals(n"HUDMiddleWidget", widget.GetName()) {
       return false;
     }
-    let uselessLogsRemoval = this.logText;
 
     let paths: [[CName]] = [];
     ArrayPush(paths, [n"Root", n"inkCanvas"]);
@@ -182,17 +105,14 @@ class MakeAvatarBeegTM extends ScriptableSystem {
 
     if IsDefined(contactListSlot) {
       this.contactUiRoot = root;
-      this.log("        contactUiRoot was found!");
       return true;
     }
 
-    this.logText = uselessLogsRemoval + "X";
     return false;
   }
 
   private func findAndSetCentralContainer() {
     if IsDefined(this.centralContainer) {
-      this.log("centralContainer is already defined");
       return;
     }
 
@@ -206,17 +126,11 @@ class MakeAvatarBeegTM extends ScriptableSystem {
 
     if IsDefined(centralContainer) {
       this.centralContainer = centralContainer;
-      this.log("        centralContainer was found!");
-      return;
     }
-
-    this.log("        centralContainer could not be found!");
-    return;
   }
 
   private func findAndSetContactAvatar() {
     if IsDefined(this.contactAvatar) {
-      this.log("contactAvatar is already defined");
       return;
     }
 
@@ -230,17 +144,11 @@ class MakeAvatarBeegTM extends ScriptableSystem {
 
     if IsDefined(contactAvatar) {
       this.contactAvatar = contactAvatar;
-      this.log("        contactAvatar was found!");
-      return;
     }
-
-    this.log("        contactAvatar could not be found!");
-    return;
   }
 
   private func findAndSetSmsMessengerSlot() {
     if IsDefined(this.smsMessengerSlot) {
-      this.log("smsMessengerSlot is already defined");
       return;
     }
 
@@ -251,17 +159,11 @@ class MakeAvatarBeegTM extends ScriptableSystem {
 
     if IsDefined(smsMessengerSlot) {
       this.smsMessengerSlot = smsMessengerSlot;
-      this.log("        smsMessengerSlot was found!");
-      return;
     }
-
-    this.log("        smsMessengerSlot could not be found!");
-    return;
   }
 
   private func findAndSetAvatarHolder() {
     if IsDefined(this.avatarHolder) {
-      this.log("avatarHolder is already defined");
       return;
     }
 
@@ -273,17 +175,11 @@ class MakeAvatarBeegTM extends ScriptableSystem {
 
     if IsDefined(avatarHolder) {
       this.avatarHolder = avatarHolder;
-      this.log("        avatarHolder was found!");
-      return;
     }
-
-    this.log("        avatarHolder could not be found!");
-    return;
   }
 
   private func findAndSetAvatarDummy() {
     if IsDefined(this.avatarDummy) {
-      this.log("avatarDummy is already defined");
       return;
     }
 
@@ -291,22 +187,13 @@ class MakeAvatarBeegTM extends ScriptableSystem {
 
     if IsDefined(avatarDummy) {
       this.avatarDummy = avatarDummy;
-      this.log("        avatarDummy was found!");
-      return;
     }
-
-    this.log("        avatarDummy could not be found!");
-    return;
   }
 
   private func drillDown(rootWidget: wref<inkCompoundWidget>, steps: [[CName]]) -> wref<inkCompoundWidget> {
     let currentWidget = rootWidget;
 
-    this.log("Drilling from " + NameToString(rootWidget.GetName()));
-
     for step in steps {
-      this.log("    Searching: " + NameToString(step[0]));
-
       if Equals(step[1], n"inkCanvas") {
         currentWidget = (currentWidget as inkCompoundWidget).GetWidgetByPathName(step[0]) as inkCanvas;
       } else if Equals(step[1], n"inkFlex") {
@@ -315,10 +202,7 @@ class MakeAvatarBeegTM extends ScriptableSystem {
         currentWidget = (currentWidget as inkCompoundWidget).GetWidgetByPathName(step[0]) as inkVerticalPanel;
       }
 
-      if IsDefined(currentWidget) {
-        this.logInline(" - OK!");
-      } else {
-        this.logInline(" - Failed!");
+      if !IsDefined(currentWidget) {
         return null;
       }
     }
@@ -330,14 +214,8 @@ class MakeAvatarBeegTM extends ScriptableSystem {
     this.InitWidgets();
 
     if !this.areAllUiElementsDefined() {
-      if this.LOGGING {
-        LogChannel(n"DEBUG", this.logText);
-        this.logCount += 1u;
-      }
       return;
     }
-
-    this.logAll();
 
     this.centralContainer.SetTranslation(new Vector2(225, 0));
 
@@ -353,11 +231,6 @@ class MakeAvatarBeegTM extends ScriptableSystem {
     this.avatarDummy.SetOpacity(0.99);
 
     this.smsMessengerSlot.SetTranslation(new Vector2(225, 0));
-
-    if this.LOGGING {
-      LogChannel(n"DEBUG", this.logText);
-      this.logCount += 1u;
-    }
   }
 }
 
