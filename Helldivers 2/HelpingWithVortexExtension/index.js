@@ -16,7 +16,7 @@ const { getMaxListeners } = require('events');
 const STEAMAPP_ID = "553850";
 const GAME_ID = "helldivers2";
 const GAME_NAME = "Helldivers 2";
-const GAME_NAME_SHORT = "Helldivers 2"; 
+const GAME_NAME_SHORT = "Helldivers 2";
 const EXEC = "bin\\helldivers2.exe";
 
 //Info for mod types and installers
@@ -155,14 +155,14 @@ function testDlbin(files, gameId) {
 
   // Test for a mod installer.
   if (supported && files.find(file =>
-          (path.basename(file).toLowerCase() === 'moduleconfig.xml') &&
-          (path.basename(path.dirname(file)).toLowerCase() === 'fomod'))) {
-      supported = false;
+    (path.basename(file).toLowerCase() === 'moduleconfig.xml') &&
+    (path.basename(path.dirname(file)).toLowerCase() === 'fomod'))) {
+    supported = false;
   }
 
   return Promise.resolve({
-      supported,
-      requiredFiles: [],
+    supported,
+    requiredFiles: [],
   });
 }
 
@@ -196,14 +196,14 @@ function testPatch(files, gameId) {
 
   // Test for a mod installer.
   if (supported && files.find(file =>
-      (path.basename(file).toLowerCase() === 'moduleconfig.xml') &&
-      (path.basename(path.dirname(file)).toLowerCase() === 'fomod'))) {
+    (path.basename(file).toLowerCase() === 'moduleconfig.xml') &&
+    (path.basename(path.dirname(file)).toLowerCase() === 'fomod'))) {
     supported = false;
   }
 
   return Promise.resolve({
-      supported,
-      requiredFiles: [],
+    supported,
+    requiredFiles: [],
   });
 }
 
@@ -222,11 +222,11 @@ function installPatch(files, gameSpec) {
 
   // Remove directories and anything that isn't in the rootPath.
   const filtered = files.filter(file =>
-    ( 
-      (file.indexOf(rootPath) !== -1) && 
-      (!file.endsWith(path.sep)) &&
-      (PATCH_EXTS.includes(path.extname(file).toLowerCase()))
-    )
+  (
+    (file.indexOf(rootPath) !== -1) &&
+    (!file.endsWith(path.sep)) &&
+    (PATCH_EXTS.includes(path.extname(file).toLowerCase()))
+  )
   );
 
   const instructions = filtered.map((file, index) => {
@@ -249,14 +249,14 @@ function testStream(files, gameId) {
 
   // Test for a mod installer.
   if (supported && files.find(file =>
-      (path.basename(file).toLowerCase() === 'moduleconfig.xml') &&
-      (path.basename(path.dirname(file)).toLowerCase() === 'fomod'))) {
+    (path.basename(file).toLowerCase() === 'moduleconfig.xml') &&
+    (path.basename(path.dirname(file)).toLowerCase() === 'fomod'))) {
     supported = false;
   }
 
   return Promise.resolve({
-      supported,
-      requiredFiles: [],
+    supported,
+    requiredFiles: [],
   });
 }
 
@@ -269,10 +269,10 @@ function installStream(files, gameSpec) {
 
   // Remove directories and anything that isn't in the rootPath.
   const filtered = files.filter(file =>
-    ( 
-      //(file.indexOf(rootPath) !== -1) && 
-      (!file.endsWith(path.sep))
-    )
+  (
+    //(file.indexOf(rootPath) !== -1) && 
+    (!file.endsWith(path.sep))
+  )
   );
 
   const instructions = filtered.map((file, index) => {
@@ -301,15 +301,15 @@ function setupNotify(api) {
         action: (dismiss) => {
           api.showDialog('question', 'Action required', {
             text: 'If you are using multiple ".patch0" type mods, you need to rename files manually in the staging folder to resolve conflicts. \n'
-                + 'Right click on the mod in the modlist and select "Open in File Manager" option. You can then change the file extensions. \n'
-                + 'The Load Order tab can be used as a reference to keep track of how many patch mods you have deployed currently. \n'
+              + 'Right click on the mod in the modlist and select "Open in File Manager" option. You can then change the file extensions. \n'
+              + 'The Load Order tab can be used as a reference to keep track of how many patch mods you have deployed currently. \n'
           }, [
             { label: 'Continue', action: () => dismiss() },
           ]);
         },
       },
     ],
-  });    
+  });
 }
 
 //Functions for .patch0 file extension renaming and load ordering
@@ -338,13 +338,13 @@ function loadOrderSuffix(api, mod) {
   const state = api.getState();
   const gameId = mod.attributes.downloadGame;
   if (!gameId)
-      return '99';
+    return '99';
   const profile = selectors.lastActiveProfileForGame(state, gameId);
   const loadOrder = util.getSafe(state, ['persistent', 'loadOrder', profile], {});
   const loKeys = Object.keys(loadOrder);
   const pos = loKeys.indexOf(mod.id);
   if (pos === -1) {
-      return '99';
+    return '99';
   }
   let pos_adj = pos + 1;
 
@@ -374,13 +374,13 @@ function applyGame(context, gameSpec) {
     supportedTools: tools,
   };
   context.registerGame(game);
-  
+
   //register mod types
   (gameSpec.modTypes || []).forEach((type, idx) => {
     context.registerModType(type.id, modTypePriority(type.priority) + idx, (gameId) => {
-        var _a;
-        return (gameId === gameSpec.game.id)
-            && !!((_a = context.api.getState().settings.gameMode.discovered[gameId]) === null || _a === void 0 ? void 0 : _a.path);
+      var _a;
+      return (gameId === gameSpec.game.id)
+        && !!((_a = context.api.getState().settings.gameMode.discovered[gameId]) === null || _a === void 0 ? void 0 : _a.path);
     }, (game) => pathPattern(context.api, game, type.targetPath), () => Promise.resolve(false), { name: type.name });
   });
 
@@ -391,63 +391,110 @@ function applyGame(context, gameSpec) {
     }, //isSupported - Is this mod for this game
     (game) => pathPattern(context.api, game, `{gamePath}\\${PATCH_PATH}`), //getPath - mod install location
     () => Promise.resolve(false), //test - is installed mod of this type
-    { 
+    {
       name: PATCH_NAME,
     } //options
   );
-  
+
   //register mod installers
   context.registerInstaller(`${GAME_ID}-dlbin`, 25, testDlbin, installDlbin);
   context.registerInstaller(`${GAME_ID}-patch`, 30, testPatch, installPatch);
   context.registerInstaller(`${GAME_ID}-stream`, 35, testStream, installStream);
 }
 
+const loadOrderCallback = (updatedLoadOrder, mods, loadOrder) => {
+  return updatedLoadOrder;
+
+  // if (loadOrder === undefined) return updatedLoadOrder;
+  // if (updatedLoadOrder === loadOrder) return updatedLoadOrder;
+
+  //let MODS_FILTERED = mods.filter(mod => mod.type === PATCH_ID);
+  /*
+  //Do .patch0 file renaming here
+  (context, loadOrder, mods) => {
+                          const MODS = mods.filter(mod => mod.type === PATCH_ID);
+                          MODS.forEach(
+                                        (mod, index) => {
+                                                          let pos_adj = 1;
+                                                          loadOrderSuffix(context.api, mod);
+                                                          //const MOD_FILES = mods[mod.id].files[mod.id];
+                                                          const MOD_FILES = mod.files;
+                                                          MOD_FILES.forEach(
+                                                                            (file, index) => {
+                                                                                                const MOD_FILE = MOD_FILES[index];
+                                                                                                const FILE_NAME = path.basename(MOD_FILE);
+                                                                                                const FILE_NAME_NEW = FILE_NAME.replace(PATCH_STRING, PATCH_BASE_STRING + pos);
+                                                                                                fs.renameSync(MOD_FILE, path.join(path.dirname(MOD_FILE), FILE_NAME_NEW));
+                                                                                              }
+                                                                            );
+                                                          }
+                                        );
+                                  }  
+  */
+  context.api.store.dispatch(actions.setDeploymentNecessary(spec.game.id, true));
+  loadOrder = updatedLoadOrder;
+}
+
+const Umm_isThisFunctionEverCalled_QuestionMark = (params) => {
+  console.log("Umm_isThisFunctionEverCalled_QuestionMark", params);
+  return [];
+};
+
+const checkIfFileHasToBeMerged = (filePath) => {
+  console.log("CheckIfFileHasToBeMerged", { filePath });
+  return filePath.toLowerCase().includes("patch_");
+};
+
+const mergeTest = (game, discovery, context) => {
+  console.log("mergeTest", { game, discovery, context });
+
+  if (game.id !== GAME_ID) return;
+
+  return {
+    baseFiles: (deployedFiles, b, c, d, e) => Umm_isThisFunctionEverCalled_QuestionMark({ deployedFiles, b, c, d, e }),
+    filter: (filePath) => checkIfFileHasToBeMerged(filePath)
+  }
+
+}
+
+const mergeOperation = (filePath, mergePath, context, loadOrder) => {
+  console.log("mergeOperation", { filePath, mergePath, context, loadOrder });
+}
+
+const tryToRegisterMerge = (context, loadOrder) => {
+  console.log("tryToRegisterMerge", { context, loadOrder });
+
+  try {
+    context.registerMerge(
+      (game, discovery) => mergeTest(game, discovery, context),
+      (filePath, mergePath) => mergeOperation(filePath, mergePath, context, loadOrder),
+      PATCH_ID
+    );
+  } catch (e) {
+    console.error("Error registering merge", e);
+  }
+};
+
 //Main Function
 function main(context) {
   applyGame(context, spec);
 
-  let previousLO;
+  let loadOrder;
   context.registerLoadOrderPage({
     gameId: spec.game.id,
     gameArtURL: path.join(__dirname, spec.game.logo),
     preSort: (items, direction) => preSort(context.api, items, direction),
     filter: mods => mods.filter(mod => mod.type === PATCH_ID),
     displayCheckboxes: false,
-    callback: (loadOrder, mods) => {
-      if (previousLO === undefined) previousLO = loadOrder;
-      if (loadOrder === previousLO) return;
-      //let MODS_FILTERED = mods.filter(mod => mod.type === PATCH_ID);
-      /*
-      //Do .patch0 file renaming here
-      (context, loadOrder, mods) => {
-                              const MODS = mods.filter(mod => mod.type === PATCH_ID);
-                              MODS.forEach(
-                                            (mod, index) => {
-                                                              let pos_adj = 1;
-                                                              loadOrderSuffix(context.api, mod);
-                                                              //const MOD_FILES = mods[mod.id].files[mod.id];
-                                                              const MOD_FILES = mod.files;
-                                                              MOD_FILES.forEach(
-                                                                                (file, index) => {
-                                                                                                    const MOD_FILE = MOD_FILES[index];
-                                                                                                    const FILE_NAME = path.basename(MOD_FILE);
-                                                                                                    const FILE_NAME_NEW = FILE_NAME.replace(PATCH_STRING, PATCH_BASE_STRING + pos);
-                                                                                                    fs.renameSync(MOD_FILE, path.join(path.dirname(MOD_FILE), FILE_NAME_NEW));
-                                                                                                  }
-                                                                                );
-                                                              }
-                                            );
-                                      }  
-      */
-      context.api.store.dispatch(actions.setDeploymentNecessary(spec.game.id, true));
-      previousLO = loadOrder;
-    },
+    callback: (updatedLoadOrder, mods) => loadOrder = loadOrderCallback(updatedLoadOrder, mods, loadOrder),
     createInfoPanel: () =>
-    context.api.translate(`Drag and drop the patch mods on the left to change the order in which they load. ${spec.game.name} loads patch mods in numerical order, so Vortex suffixes `
-    + 'the file names with ".patch0, .patch1, .patch2, ..." to ensure they load in the order you set here. '
-    + 'The number in the left column represents the overwrite order. The changes from mods with higher numbers will take priority over other mods which make similar edits.'),
+      context.api.translate(`Drag and drop the patch mods on the left to change the order in which they load. ${spec.game.name} loads patch mods in numerical order, so Vortex suffixes `
+        + 'the file names with ".patch0, .patch1, .patch2, ..." to ensure they load in the order you set here. '
+        + 'The number in the left column represents the overwrite order. The changes from mods with higher numbers will take priority over other mods which make similar edits.'),
   });
-  
+
+  tryToRegisterMerge(context, loadOrder)
+
   context.once(() => {
     // put code here that should be run (once) when Vortex starts up
 
