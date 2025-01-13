@@ -1,0 +1,10 @@
+{
+  "name": "Helldivers 2 Vortex Extension",
+  "author": "ChemBoy1",
+  "version": "0.4.3",
+  "description": "Vortex extension for Helldivers 2 (Steam Version).",
+  "type": "game",
+  "path": "C:\\Users\\Kikiwako\\AppData\\Roaming\\Vortex\\plugins\\Vortex Extension Update - Helldivers 2 Vortex Extension v0.4.3.7z",
+  "bundled": false,
+  "modId": 845
+}
