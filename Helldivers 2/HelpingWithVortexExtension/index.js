@@ -76,14 +76,12 @@ const spec = {
       "priority": "high",
       "targetPath": `{gamePath}\\${DATA_PATH}`
     },
-    /*
     {
       "id": PATCH_ID,
       "name": PATCH_NAME,
       "priority": "high",
       "targetPath": `{gamePath}\\${PATCH_PATH}`
     },
-    */
     {
       "id": STREAM_ID,
       "name": STREAM_NAME,
@@ -435,8 +433,8 @@ const loadOrderCallback = (updatedLoadOrder, mods, loadOrder) => {
   loadOrder = updatedLoadOrder;
 }
 
-const Umm_isThisFunctionEverCalled_QuestionMark = (params) => {
-  console.log("Umm_isThisFunctionEverCalled_QuestionMark", params);
+const baseFile_MaybeOptional = (deployedFiles) => {
+  console.log("baseFile_MaybeOptional", deployedFiles);
   return [];
 };
 
@@ -451,14 +449,31 @@ const mergeTest = (game, discovery, context) => {
   if (game.id !== GAME_ID) return;
 
   return {
-    baseFiles: (deployedFiles, b, c, d, e) => Umm_isThisFunctionEverCalled_QuestionMark({ deployedFiles, b, c, d, e }),
+    baseFiles: (deployedFiles, b, c, d, e) => baseFile_MaybeOptional({ deployedFiles, b, c, d, e }),
     filter: (filePath) => checkIfFileHasToBeMerged(filePath)
   }
-
 }
 
-const mergeOperation = (filePath, mergePath, context, loadOrder) => {
-  console.log("mergeOperation", { filePath, mergePath, context, loadOrder });
+const mergeOperation = (filePath, mergePath, context) => {
+  console.log("mergeOperation", { filePath, mergePath, context });
+
+  const state = context.api.getState();
+  const profile = selectors.lastActiveProfileForGame(state, GAME_ID);
+  const loadOrder = util.getSafe(state, ['persistent', 'loadOrder', profile], {});
+
+  const splittedPath = filePath.split(path.sep);
+  const fileName = splittedPath.pop();
+  const modName = splittedPath.pop();
+
+  const modPosition = loadOrder[modName].pos;
+
+  const [fileStart, fileEnd] = fileName.split("patch_0");
+
+  const targetFileName = `${fileStart}patch_${modPosition}${fileEnd}`;
+
+  const mergeTarget = path.join(mergePath, targetFileName);
+
+  fs.copyAsync(filePath, mergeTarget);
 }
 
 const tryToRegisterMerge = (context, loadOrder) => {
@@ -473,6 +488,15 @@ const tryToRegisterMerge = (context, loadOrder) => {
   } catch (e) {
     console.error("Error registering merge", e);
   }
+};
+
+const cleanupMergeFolder = (context) => {
+  const stagingFolder = selectors.installPathForGame(context.api.getState(), GAME_ID)
+  const folderName = "__merged." + PATCH_ID;
+
+  const folderToDelete = path.join(stagingFolder, folderName);
+
+  fs.removeAsync(folderToDelete);
 };
 
 //Main Function
@@ -493,7 +517,12 @@ function main(context) {
         + 'The number in the left column represents the overwrite order. The changes from mods with higher numbers will take priority over other mods which make similar edits.'),
   });
 
-  tryToRegisterMerge(context, loadOrder)
+  tryToRegisterMerge(context, loadOrder);
+
+  context.api.onAsync('did-deploy', async (profileId, deployment) => {
+    cleanupMergeFolder(context);
+  });
+
 
   context.once(() => {
     // put code here that should be run (once) when Vortex starts up
