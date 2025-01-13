@@ -28,7 +28,7 @@ const modFileExt = ".dl_bin";
 const BINARIES_ID = `${GAME_ID}-binaries`;
 const BINARIES_PATH = path.join("bin");
 
-const PATCH_ID = `${GAME_ID}-patch`;
+const PATCH_ID = `${GAME_ID}-patch--MergedMods--Ignore-this--DO-NOT-ENABLE`;
 const PATCH_NAME = "Data Patch (.patch0)";
 const PATCH_PATH = path.join("data");
 const patchModFileExt = ".patch_0";
@@ -416,15 +416,6 @@ const mergeTest = (game, discovery, context) => {
   }
 }
 
-const updateLoadOrderError = () => {
-  context.api.sendNotification({
-    id: 'deploy-notification-helldivers2',
-    type: 'error',
-    message: 'Load Order needs to be refreshed',
-    allowSuppress: true,
-  });
-};
-
 const mergeOperation = (filePath, mergePath, context) => {
 
   const state = context.api.getState();
@@ -435,7 +426,8 @@ const mergeOperation = (filePath, mergePath, context) => {
   const fileName = splittedPath.pop();
   const modName = splittedPath.pop();
 
-  const modPosition = loadOrder[modName]?.pos || loadOrder.length;
+  const modIsInLoadOrder = loadOrder[modName] != undefined;
+  const modPosition = modIsInLoadOrder ? loadOrder[modName].pos : loadOrder.length;
 
   const [fileStart, fileEnd] = fileName.split("patch_0");
 
@@ -446,13 +438,13 @@ const mergeOperation = (filePath, mergePath, context) => {
   fs.copyAsync(filePath, mergeTarget);
 }
 
-const cleanupMergeFolder = (context) => {
-  const stagingFolder = selectors.installPathForGame(context.api.getState(), GAME_ID)
-  const folderName = "__merged." + PATCH_ID;
-
-  const folderToDelete = path.join(stagingFolder, folderName);
-
-  fs.removeAsync(folderToDelete);
+const sendReinstallAllModsNotification = (context) => {
+  context.api.sendNotification({
+    id: 'reinstall-mods-notification-helldivers2',
+    type: 'error',
+    message: 'You need to re-install all your mods',
+    allowSuppress: true,
+  });
 };
 
 const requestDeployment = (context) => {
@@ -466,8 +458,13 @@ const requestDeployment = (context) => {
     actions: [
       {
         title: 'Deploy',
-        action: () => context.api.events.emit('deploy-mods', (err) => console.warn(`Error deploying mods \n${err}`))
-      },
+        action: () => context.api.events.emit('deploy-mods', (err) => {
+          if (err == null) {
+            sendReinstallAllModsNotification(context);
+          }
+          console.warn(`Error deploying mods \n${err}`)
+        })
+      }
     ],
   });
 };
@@ -511,10 +508,9 @@ function main(context) {
   );
 
   context.api.onAsync('did-deploy', async (profileId, deployment) => {
-    cleanupMergeFolder(context);
     context.api.dismissNotification('deploy-notification-helldivers2');
 
-    // Because we create a temporary merged mod when deploying,
+    // Because we create a merged mod when deploying,
     // Vortex thinks that all mods have duplicates and are redundant
     context.api.dismissNotification('redundant-mods');
   });
