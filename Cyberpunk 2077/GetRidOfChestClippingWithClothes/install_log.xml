@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<InstalLog Project="test2" Build_date="Fri.. Jan..  2025-01-10 12:47:55 PM">
+  <Files>
+    <Directory Path="N:\GogGames\Cyberpunk 2077\archive">
+      <Directory Path="N:\GogGames\Cyberpunk 2077\archive\pc">
+        <Directory Path="N:\GogGames\Cyberpunk 2077\archive\pc\mod">
+          <file>N:\GogGames\Cyberpunk 2077\archive\pc\mod\GetRidOfChestClippingWithClothes.archive</file>
+        </Directory>
+      </Directory>
+    </Directory>
+  </Files>
+</InstalLog>
