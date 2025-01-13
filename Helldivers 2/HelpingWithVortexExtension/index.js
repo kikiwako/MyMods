@@ -420,6 +420,15 @@ const mergeTest = (game, discovery, context) => {
   }
 }
 
+const sendRefreshLoadOrderNotification = (context) => {
+  context.api.sendNotification({
+    id: 'refresh-load-order-notification-helldivers2',
+    type: 'error',
+    message: 'Refresh you load order',
+    allowSuppress: false,
+  });
+};
+
 const mergeOperation = (filePath, mergePath, context) => {
 
   const state = context.api.getState();
@@ -432,6 +441,10 @@ const mergeOperation = (filePath, mergePath, context) => {
 
   const modIsInLoadOrder = loadOrder[modName] != undefined;
   const modPosition = modIsInLoadOrder ? loadOrder[modName].pos : loadOrder.length;
+
+  if (modPosition == undefined) {
+    sendRefreshLoadOrderNotification(context);
+  }
 
   const [fileStart, fileEnd] = fileName.split("patch_0");
 
