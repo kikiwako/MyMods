@@ -442,14 +442,14 @@ const mergeOperation = (filePath, mergePath, context) => {
   fs.copyAsync(filePath, mergeTarget);
 }
 
-const sendReinstallAllModsNotification = (context) => {
-  context.api.sendNotification({
-    id: 'reinstall-mods-notification-helldivers2',
-    type: 'error',
-    message: 'You need to re-install all your mods',
-    allowSuppress: true,
-  });
-};
+// const sendReinstallAllModsNotification = (context) => {
+//   context.api.sendNotification({
+//     id: 'reinstall-mods-notification-helldivers2',
+//     type: 'error',
+//     message: 'You need to re-install all your mods',
+//     allowSuppress: true,
+//   });
+// };
 
 const requestDeployment = (context) => {
   context.api.store.dispatch(actions.setDeploymentNecessary(GAME_ID, true));
@@ -463,9 +463,10 @@ const requestDeployment = (context) => {
       {
         title: 'Deploy',
         action: () => context.api.events.emit('deploy-mods', (err) => {
-          if (err == null) {
-            sendReinstallAllModsNotification(context);
-          }
+          // Oops, this shows up all the time!
+          // if (err == null) {
+          //   sendReinstallAllModsNotification(context);
+          // }
           console.warn(`Error deploying mods \n${err}`)
         })
       }
