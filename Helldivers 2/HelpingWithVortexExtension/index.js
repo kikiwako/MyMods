@@ -28,7 +28,11 @@ const modFileExt = ".dl_bin";
 const BINARIES_ID = `${GAME_ID}-binaries`;
 const BINARIES_PATH = path.join("bin");
 
-const PATCH_ID = `${GAME_ID}-patch--MergedMods--Ignore-this--DO-NOT-ENABLE`;
+// This will also be the name of the merge folder.
+// It creates a mod new mod folder and vortex will show an error message when 
+// for the first time after installing mods. User must select "Aplly Changes".
+// It Will also show up in the mod list. User must not enable this mod.
+const PATCH_ID = `${GAME_ID}-patch--MergedMods--This-is-fine--Ignore-this--SELECT-APPLY-CHANGES--DO-NOT-ENABLE`;
 const PATCH_NAME = "Data Patch (.patch0)";
 const PATCH_PATH = path.join("data");
 const patchModFileExt = ".patch_0";
