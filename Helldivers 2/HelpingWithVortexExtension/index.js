@@ -287,22 +287,27 @@ function installStream(files, gameSpec) {
 }
 
 //Notify User of Setup instructions for Mod Managers
-function setupNotify(api) {
+function autoDeployNotification(api) {
   api.sendNotification({
     id: 'setup-notification-helldivers2',
     type: 'warning',
-    message: '.patch0 Files Management',
+    message: 'Disabling auto-deploy is recommended',
     allowSuppress: true,
     actions: [
       {
-        title: 'More',
+        title: 'info',
         action: (dismiss) => {
-          api.showDialog('question', 'Action required', {
-            text: 'If you are using multiple ".patch0" type mods, you need to rename files manually in the staging folder to resolve conflicts. \n'
-              + 'Right click on the mod in the modlist and select "Open in File Manager" option. You can then change the file extensions. \n'
-              + 'The Load Order tab can be used as a reference to keep track of how many patch mods you have deployed currently. \n'
+          api.showDialog('question', 'Disabling "Deploy Mods when Enabled" is recommended', {
+            bbcode: `Deployment of mods for Helldivers 2 is a bit slower and tedious. By disabling
+            this option, it will save you time and make it easier on your PC / Drive.
+            <br/>
+            <br/>
+            It is in "Settings > Interface > Automation > Deploy Mods when Enabled"
+            <br/>
+            <br/>
+            There will be a notification to remind you that you need to deploy.`
           }, [
-            { label: 'Continue', action: () => dismiss() },
+            { label: 'OK', action: () => dismiss() },
           ]);
         },
       },
@@ -354,7 +359,9 @@ function loadOrderSuffix(api, mod) {
 
 //Setup function
 async function setup(discovery, api, gameSpec) {
-  setupNotify(api);
+  const isAutoDeployOn = api.getState().settings.automation.deploy;
+  if (isAutoDeployOn) autoDeployNotification(api);
+
   return fs.ensureDirWritableAsync(path.join(discovery.path, DATA_PATH));
 }
 
@@ -400,62 +407,25 @@ function applyGame(context, gameSpec) {
   context.registerInstaller(`${GAME_ID}-stream`, 35, testStream, installStream);
 }
 
-const loadOrderCallback = (updatedLoadOrder, mods, loadOrder) => {
-  return updatedLoadOrder;
-
-  // if (loadOrder === undefined) return updatedLoadOrder;
-  // if (updatedLoadOrder === loadOrder) return updatedLoadOrder;
-
-  //let MODS_FILTERED = mods.filter(mod => mod.type === PATCH_ID);
-  /*
-  //Do .patch0 file renaming here
-  (context, loadOrder, mods) => {
-                          const MODS = mods.filter(mod => mod.type === PATCH_ID);
-                          MODS.forEach(
-                                        (mod, index) => {
-                                                          let pos_adj = 1;
-                                                          loadOrderSuffix(context.api, mod);
-                                                          //const MOD_FILES = mods[mod.id].files[mod.id];
-                                                          const MOD_FILES = mod.files;
-                                                          MOD_FILES.forEach(
-                                                                            (file, index) => {
-                                                                                                const MOD_FILE = MOD_FILES[index];
-                                                                                                const FILE_NAME = path.basename(MOD_FILE);
-                                                                                                const FILE_NAME_NEW = FILE_NAME.replace(PATCH_STRING, PATCH_BASE_STRING + pos);
-                                                                                                fs.renameSync(MOD_FILE, path.join(path.dirname(MOD_FILE), FILE_NAME_NEW));
-                                                                                              }
-                                                                            );
-                                                          }
-                                        );
-                                  }  
-  */
-  context.api.store.dispatch(actions.setDeploymentNecessary(spec.game.id, true));
-  loadOrder = updatedLoadOrder;
-}
-
-const baseFile_MaybeOptional = (deployedFiles) => {
-  console.log("baseFile_MaybeOptional", deployedFiles);
-  return [];
-};
-
-const checkIfFileHasToBeMerged = (filePath) => {
-  console.log("CheckIfFileHasToBeMerged", { filePath });
-  return filePath.toLowerCase().includes("patch_");
-};
-
 const mergeTest = (game, discovery, context) => {
-  console.log("mergeTest", { game, discovery, context });
-
   if (game.id !== GAME_ID) return;
 
   return {
-    baseFiles: (deployedFiles, b, c, d, e) => baseFile_MaybeOptional({ deployedFiles, b, c, d, e }),
-    filter: (filePath) => checkIfFileHasToBeMerged(filePath)
+    baseFiles: () => [],
+    filter: () => true
   }
 }
 
+const updateLoadOrderError = () => {
+  context.api.sendNotification({
+    id: 'deploy-notification-helldivers2',
+    type: 'error',
+    message: 'Load Order needs to be refreshed',
+    allowSuppress: true,
+  });
+};
+
 const mergeOperation = (filePath, mergePath, context) => {
-  console.log("mergeOperation", { filePath, mergePath, context });
 
   const state = context.api.getState();
   const profile = selectors.lastActiveProfileForGame(state, GAME_ID);
@@ -465,7 +435,7 @@ const mergeOperation = (filePath, mergePath, context) => {
   const fileName = splittedPath.pop();
   const modName = splittedPath.pop();
 
-  const modPosition = loadOrder[modName].pos;
+  const modPosition = loadOrder[modName]?.pos || loadOrder.length;
 
   const [fileStart, fileEnd] = fileName.split("patch_0");
 
@@ -476,20 +446,6 @@ const mergeOperation = (filePath, mergePath, context) => {
   fs.copyAsync(filePath, mergeTarget);
 }
 
-const tryToRegisterMerge = (context, loadOrder) => {
-  console.log("tryToRegisterMerge", { context, loadOrder });
-
-  try {
-    context.registerMerge(
-      (game, discovery) => mergeTest(game, discovery, context),
-      (filePath, mergePath) => mergeOperation(filePath, mergePath, context, loadOrder),
-      PATCH_ID
-    );
-  } catch (e) {
-    console.error("Error registering merge", e);
-  }
-};
-
 const cleanupMergeFolder = (context) => {
   const stagingFolder = selectors.installPathForGame(context.api.getState(), GAME_ID)
   const folderName = "__merged." + PATCH_ID;
@@ -499,30 +455,83 @@ const cleanupMergeFolder = (context) => {
   fs.removeAsync(folderToDelete);
 };
 
+const requestDeployment = (context) => {
+  context.api.store.dispatch(actions.setDeploymentNecessary(GAME_ID, true));
+
+  context.api.sendNotification({
+    id: 'deploy-notification-helldivers2',
+    type: 'warning',
+    message: 'Deployment is needed',
+    allowSuppress: true,
+    actions: [
+      {
+        title: 'Deploy',
+        action: () => context.api.events.emit('deploy-mods', (err) => console.warn(`Error deploying mods \n${err}`))
+      },
+    ],
+  });
+};
+
 //Main Function
 function main(context) {
   applyGame(context, spec);
 
-  let loadOrder;
+  let currentLoadOrder;
   context.registerLoadOrderPage({
     gameId: spec.game.id,
     gameArtURL: path.join(__dirname, spec.game.logo),
     preSort: (items, direction) => preSort(context.api, items, direction),
     filter: mods => mods.filter(mod => mod.type === PATCH_ID),
     displayCheckboxes: false,
-    callback: (updatedLoadOrder, mods) => loadOrder = loadOrderCallback(updatedLoadOrder, mods, loadOrder),
+    callback: (updatedLoadOrder, mods) => {
+      if (currentLoadOrder == updatedLoadOrder) return;
+
+      if (currentLoadOrder == undefined) {
+        currentLoadOrder = updatedLoadOrder;
+        return;
+      }
+
+      currentLoadOrder = updatedLoadOrder;
+      requestDeployment(context);
+    },
     createInfoPanel: () =>
-      context.api.translate(`Drag and drop the patch mods on the left to change the order in which they load. ${spec.game.name} loads patch mods in numerical order, so Vortex suffixes `
-        + 'the file names with ".patch0, .patch1, .patch2, ..." to ensure they load in the order you set here. '
-        + 'The number in the left column represents the overwrite order. The changes from mods with higher numbers will take priority over other mods which make similar edits.'),
+      context.api.translate(`Drag and drop the patch mods on the left to change the
+        order in which they load. ${spec.game.name} loads patch mods in numerical 
+        order, so Vortex suffixes the file names with ".patch0, .patch1, .patch2, ..." 
+        to ensure they load in the order you set here. The number in the left column 
+        represents the overwrite order. The changes from mods with higher numbers will 
+        take priority over other mods which make similar edits.`
+      ),
   });
 
-  tryToRegisterMerge(context, loadOrder);
+  context.registerMerge(
+    (game, discovery) => mergeTest(game, discovery, context),
+    (filePath, mergePath) => mergeOperation(filePath, mergePath, context, currentLoadOrder),
+    PATCH_ID
+  );
 
   context.api.onAsync('did-deploy', async (profileId, deployment) => {
     cleanupMergeFolder(context);
+    context.api.dismissNotification('deploy-notification-helldivers2');
+
+    // Because we create a temporary merged mod when deploying,
+    // Vortex thinks that all mods have duplicates and are redundant
+    context.api.dismissNotification('redundant-mods');
   });
 
+  context.api.events.on('mods-enabled', () => {
+    const isAutoDeployOn = context.api.getState().settings.automation.deploy;
+    if (!isAutoDeployOn) {
+      requestDeployment(context);
+    }
+  });
+
+  context.api.events.on('mod-disabled', () => {
+    const isAutoDeployOn = context.api.getState().settings.automation.deploy;
+    if (!isAutoDeployOn) {
+      requestDeployment(context);
+    }
+  });
 
   context.once(() => {
     // put code here that should be run (once) when Vortex starts up
