@@ -533,14 +533,19 @@ function main(context) {
     context.api.dismissNotification('redundant-mods');
   });
 
-  context.api.events.on('mods-enabled', () => {
+  context.api.events.on('mods-enabled', (mods, enabled, gameId) => {
+    if (gameId !== GAME_ID) return;
+
     const isAutoDeployOn = context.api.getState().settings.automation.deploy;
     if (!isAutoDeployOn) {
       requestDeployment(context);
     }
   });
 
-  context.api.events.on('mod-disabled', () => {
+  context.api.events.on('mod-disabled', (profileId, modId) => {
+    const lastActiveHelldiverProfile = selectors.lastActiveProfileForGame(context.api.getState(), GAME_ID);
+    if (profileId !== lastActiveHelldiverProfile) return;
+
     const isAutoDeployOn = context.api.getState().settings.automation.deploy;
     if (!isAutoDeployOn) {
       requestDeployment(context);
