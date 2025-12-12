@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<InstalLog Project="Tests" Build_date="Sat.. Feb..  2025-02-08 4:56:18 AM">
+  <Files>
+    <Directory Path="N:\GogGames\Cyberpunk 2077\archive">
+      <Directory Path="N:\GogGames\Cyberpunk 2077\archive\pc">
+        <Directory Path="N:\GogGames\Cyberpunk 2077\archive\pc\mod">
+          <file>N:\GogGames\Cyberpunk 2077\archive\pc\mod\BigJunkForExoticV.archive</file>
+        </Directory>
+      </Directory>
+    </Directory>
+  </Files>
+</InstalLog>

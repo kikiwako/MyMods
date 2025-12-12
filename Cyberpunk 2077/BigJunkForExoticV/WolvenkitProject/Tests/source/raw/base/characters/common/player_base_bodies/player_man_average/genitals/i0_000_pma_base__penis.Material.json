@@ -1,0 +1,1648 @@
+{
+  "Header": {
+    "MaterialJsonVersion": "1.0.0"
+  },
+  "MaterialRepo": "C:\\Users\\Kikiwako\\AppData\\Roaming\\REDModding\\WolvenKit\\Depot",
+  "Materials": [
+    {
+      "Name": "01_ca_pale",
+      "BaseMaterial": "arveth_retextureplayer\\materials\\male\\jaguar_body.mi",
+      "MaterialTemplate": "engine\\materials\\metal_base.remt",
+      "EnableMask": false,
+      "Data": {
+        "BaseColor": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_d01.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_m01.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_r01.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_n01.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "05_bl_espresso",
+      "BaseMaterial": "arveth_retextureplayer\\materials\\male\\jaguar_body.mi",
+      "MaterialTemplate": "engine\\materials\\metal_base.remt",
+      "EnableMask": false,
+      "Data": {
+        "BaseColor": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_d01.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_m01.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_r01.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_n01.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "02_ca_limestone",
+      "BaseMaterial": "arveth_retextureplayer\\materials\\male\\cougar_body.mi",
+      "MaterialTemplate": "engine\\materials\\metal_base.remt",
+      "EnableMask": false,
+      "Data": {
+        "BaseColor": "arveth_retextureplayer\\textures\\basepenis\\basepenis_cougar_d01.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_m01.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_r01.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_n01.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "03_ca_senna",
+      "BaseMaterial": "arveth_retextureplayer\\materials\\male\\panther_body.mi",
+      "MaterialTemplate": "engine\\materials\\metal_base.remt",
+      "EnableMask": false,
+      "Data": {
+        "BaseColor": "arveth_retextureplayer\\textures\\basepenis\\basepenis_panther_d01.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_m01.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_r01.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_n01.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "04_ca_almond",
+      "BaseMaterial": "arveth_retextureplayer\\materials\\male\\jaguar_body.mi",
+      "MaterialTemplate": "engine\\materials\\metal_base.remt",
+      "EnableMask": false,
+      "Data": {
+        "BaseColor": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_d01.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_m01.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_r01.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_n01.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "06_bl_dark",
+      "BaseMaterial": "arveth_retextureplayer\\materials\\male\\jaguar_body.mi",
+      "MaterialTemplate": "engine\\materials\\metal_base.remt",
+      "EnableMask": false,
+      "Data": {
+        "BaseColor": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_d01.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_m01.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_r01.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_n01.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "npc_01_ca_pale_dirt",
+      "BaseMaterial": "engine\\materials\\multilayered.mt",
+      "MaterialTemplate": "engine\\materials\\multilayered.mt",
+      "EnableMask": false,
+      "Data": {
+        "GlobalNormal": "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_circumcised_n01.xbm",
+        "MultilayerMask": "engine\\materials\\defaults\\multilayer_default.mlmask",
+        "MultilayerSetup": "base\\characters\\common\\base_bodies\\woman_average\\cyberware\\dolls\\textures\\npc_05_plastic_white.mlsetup",
+        "GlobalNormalIntensity": 1,
+        "GlobalNormalUVScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 0,
+          "W": 0
+        },
+        "GlobalNormalUVBias": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "MaskAtlas": "",
+        "MaskTiles": null,
+        "Layers": null,
+        "LayersStartIndex": 0,
+        "SurfaceTexAspectRatio": 0,
+        "MaskToTileScale": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "MaskTileSize": 0,
+        "MaskAtlasDims": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "MaskBaseResolution": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "SetupLayerMask": 0,
+        "NormalsTextureDDXYMultiplier": 1,
+        "MicroblendsTextureDDXYMultiplier": 1
+      }
+    },
+    {
+      "Name": "npc_02_black_dirt",
+      "BaseMaterial": "engine\\materials\\multilayered.mt",
+      "MaterialTemplate": "engine\\materials\\multilayered.mt",
+      "EnableMask": false,
+      "Data": {
+        "GlobalNormal": "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_circumcised_n01.xbm",
+        "MultilayerMask": "engine\\materials\\defaults\\multilayer_default.mlmask",
+        "MultilayerSetup": "base\\characters\\common\\base_bodies\\woman_average\\cyberware\\dolls\\textures\\npc_05_plastic_dark.mlsetup",
+        "GlobalNormalIntensity": 1,
+        "GlobalNormalUVScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 0,
+          "W": 0
+        },
+        "GlobalNormalUVBias": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "MaskAtlas": "",
+        "MaskTiles": null,
+        "Layers": null,
+        "LayersStartIndex": 0,
+        "SurfaceTexAspectRatio": 0,
+        "MaskToTileScale": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "MaskTileSize": 0,
+        "MaskAtlasDims": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "MaskBaseResolution": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "SetupLayerMask": 0,
+        "NormalsTextureDDXYMultiplier": 1,
+        "MicroblendsTextureDDXYMultiplier": 1
+      }
+    },
+    {
+      "Name": "01_ca_pale_muscularity",
+      "BaseMaterial": "base\\characters\\common\\skin\\character_mat_instance\\male\\body\\male_01_ca_pale.mi",
+      "MaterialTemplate": "base\\materials\\skin.mt",
+      "EnableMask": false,
+      "Data": {
+        "Albedo": "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_circumcised_d01.xbm",
+        "SecondaryAlbedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedoInfluence": 0,
+        "SecondaryAlbedoTintColorInfluence": 0,
+        "Normal": "engine\\textures\\small_flat_normal.xbm",
+        "DetailNormal": "engine\\textures\\small_flat_normal.xbm",
+        "Roughness": "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_rm01.xbm",
+        "DetailRoughnessBiasMin": 1,
+        "DetailRoughnessBiasMax": 0.930000007,
+        "MicroDetailUVScale01": 5,
+        "MicroDetailUVScale02": 5,
+        "MicroDetail": "base\\characters\\common\\skin\\face\\microdetail_n.xbm",
+        "MicroDetailInfluence": 0.800000012,
+        "TintColorMask": "base\\characters\\common\\skin\\torso\\i0_000_base__tintcolormask.xbm",
+        "TintColor": {
+          "Red": 171,
+          "Green": 155,
+          "Blue": 150,
+          "Alpha": 255
+        },
+        "TintScale": 0,
+        "SkinProfile": "engine\\materials\\defaults\\default.sp",
+        "Detailmap_Stretch": "engine\\textures\\small_flat_normal.xbm",
+        "EmissiveMask": "engine\\textures\\editor\\black.xbm",
+        "EmissiveEV": 0,
+        "Detailmap_Squash": "engine\\textures\\small_flat_normal.xbm",
+        "CavityIntensity": 0.25,
+        "Bloodflow": "engine\\textures\\small_flat_normal.xbm",
+        "BloodColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "DetailNormalInfluence": 0.800000012
+      }
+    },
+    {
+      "Name": "02_ca_limestone_muscularity",
+      "BaseMaterial": "base\\characters\\common\\skin\\character_mat_instance\\male\\body\\male_02_ca_limestone.mi",
+      "MaterialTemplate": "base\\materials\\skin.mt",
+      "EnableMask": false,
+      "Data": {
+        "Albedo": "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_circumcised_d01.xbm",
+        "SecondaryAlbedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedoInfluence": 0,
+        "SecondaryAlbedoTintColorInfluence": 0,
+        "Normal": "engine\\textures\\small_flat_normal.xbm",
+        "DetailNormal": "engine\\textures\\small_flat_normal.xbm",
+        "Roughness": "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_rm01.xbm",
+        "DetailRoughnessBiasMin": 1,
+        "DetailRoughnessBiasMax": 0.930000007,
+        "MicroDetailUVScale01": 5,
+        "MicroDetailUVScale02": 5,
+        "MicroDetail": "base\\characters\\common\\skin\\face\\microdetail_n.xbm",
+        "MicroDetailInfluence": 0.800000012,
+        "TintColorMask": "base\\characters\\common\\skin\\torso\\i0_000_base__tintcolormask.xbm",
+        "TintColor": {
+          "Red": 131,
+          "Green": 149,
+          "Blue": 83,
+          "Alpha": 255
+        },
+        "TintScale": 0.379999995,
+        "SkinProfile": "engine\\materials\\defaults\\default.sp",
+        "Detailmap_Stretch": "engine\\textures\\small_flat_normal.xbm",
+        "EmissiveMask": "engine\\textures\\editor\\black.xbm",
+        "EmissiveEV": 0,
+        "Detailmap_Squash": "engine\\textures\\small_flat_normal.xbm",
+        "CavityIntensity": 0.25,
+        "Bloodflow": "engine\\textures\\small_white.xbm",
+        "BloodColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "DetailNormalInfluence": 0.800000012
+      }
+    },
+    {
+      "Name": "03_ca_senna_muscularity",
+      "BaseMaterial": "base\\characters\\common\\skin\\character_mat_instance\\male\\body\\male_03_ca_senna.mi",
+      "MaterialTemplate": "base\\materials\\skin.mt",
+      "EnableMask": false,
+      "Data": {
+        "Albedo": "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_circumcised_d01.xbm",
+        "SecondaryAlbedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedoInfluence": 0,
+        "SecondaryAlbedoTintColorInfluence": 0,
+        "Normal": "engine\\textures\\small_flat_normal.xbm",
+        "DetailNormal": "engine\\textures\\small_flat_normal.xbm",
+        "Roughness": "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_rm01.xbm",
+        "DetailRoughnessBiasMin": 1,
+        "DetailRoughnessBiasMax": 0.930000007,
+        "MicroDetailUVScale01": 5,
+        "MicroDetailUVScale02": 5,
+        "MicroDetail": "base\\characters\\common\\skin\\face\\microdetail_n.xbm",
+        "MicroDetailInfluence": 0.800000012,
+        "TintColorMask": "base\\characters\\common\\skin\\torso\\i0_000_base__tintcolormask.xbm",
+        "TintColor": {
+          "Red": 202,
+          "Green": 177,
+          "Blue": 153,
+          "Alpha": 255
+        },
+        "TintScale": 0.699999988,
+        "SkinProfile": "engine\\materials\\defaults\\default.sp",
+        "Detailmap_Stretch": "engine\\textures\\small_flat_normal.xbm",
+        "EmissiveMask": "engine\\textures\\editor\\black.xbm",
+        "EmissiveEV": 0,
+        "Detailmap_Squash": "engine\\textures\\small_flat_normal.xbm",
+        "CavityIntensity": 0.25,
+        "Bloodflow": "engine\\textures\\small_white.xbm",
+        "BloodColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "DetailNormalInfluence": 0.800000012
+      }
+    },
+    {
+      "Name": "04_ca_almond_muscularity",
+      "BaseMaterial": "base\\characters\\common\\skin\\character_mat_instance\\male\\body\\male_04_ca_almond.mi",
+      "MaterialTemplate": "base\\materials\\skin.mt",
+      "EnableMask": false,
+      "Data": {
+        "Albedo": "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_circumcised_d01.xbm",
+        "SecondaryAlbedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedoInfluence": 0,
+        "SecondaryAlbedoTintColorInfluence": 0,
+        "Normal": "engine\\textures\\small_flat_normal.xbm",
+        "DetailNormal": "engine\\textures\\small_flat_normal.xbm",
+        "Roughness": "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_rm01.xbm",
+        "DetailRoughnessBiasMin": 1,
+        "DetailRoughnessBiasMax": 0.930000007,
+        "MicroDetailUVScale01": 5,
+        "MicroDetailUVScale02": 5,
+        "MicroDetail": "base\\characters\\common\\skin\\face\\microdetail_n.xbm",
+        "MicroDetailInfluence": 0.800000012,
+        "TintColorMask": "base\\characters\\common\\skin\\torso\\i0_000_base__tintcolormask.xbm",
+        "TintColor": {
+          "Red": 189,
+          "Green": 180,
+          "Blue": 173,
+          "Alpha": 255
+        },
+        "TintScale": 1,
+        "SkinProfile": "engine\\materials\\defaults\\default.sp",
+        "Detailmap_Stretch": "engine\\textures\\small_flat_normal.xbm",
+        "EmissiveMask": "engine\\textures\\editor\\black.xbm",
+        "EmissiveEV": 0,
+        "Detailmap_Squash": "engine\\textures\\small_flat_normal.xbm",
+        "CavityIntensity": 0.25,
+        "Bloodflow": "engine\\textures\\small_flat_normal.xbm",
+        "BloodColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "DetailNormalInfluence": 0.800000012
+      }
+    },
+    {
+      "Name": "05_bl_espresso_muscularity",
+      "BaseMaterial": "base\\characters\\common\\skin\\character_mat_instance\\male\\body\\male_05_bl_espresso.mi",
+      "MaterialTemplate": "base\\materials\\skin.mt",
+      "EnableMask": false,
+      "Data": {
+        "Albedo": "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_circumcised_d01.xbm",
+        "SecondaryAlbedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedoInfluence": 0,
+        "SecondaryAlbedoTintColorInfluence": 0,
+        "Normal": "engine\\textures\\small_flat_normal.xbm",
+        "DetailNormal": "engine\\textures\\small_flat_normal.xbm",
+        "Roughness": "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_rm01.xbm",
+        "DetailRoughnessBiasMin": 1,
+        "DetailRoughnessBiasMax": 0.930000007,
+        "MicroDetailUVScale01": 5,
+        "MicroDetailUVScale02": 5,
+        "MicroDetail": "base\\characters\\common\\skin\\face\\microdetail_n.xbm",
+        "MicroDetailInfluence": 0.800000012,
+        "TintColorMask": "base\\characters\\common\\skin\\torso\\i0_000_base__tintcolormask.xbm",
+        "TintColor": {
+          "Red": 117,
+          "Green": 98,
+          "Blue": 96,
+          "Alpha": 255
+        },
+        "TintScale": 0.800000012,
+        "SkinProfile": "engine\\materials\\defaults\\default.sp",
+        "Detailmap_Stretch": "engine\\textures\\small_flat_normal.xbm",
+        "EmissiveMask": "engine\\textures\\editor\\black.xbm",
+        "EmissiveEV": 0,
+        "Detailmap_Squash": "engine\\textures\\small_flat_normal.xbm",
+        "CavityIntensity": 0.25,
+        "Bloodflow": "engine\\textures\\small_flat_normal.xbm",
+        "BloodColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "DetailNormalInfluence": 0.800000012
+      }
+    },
+    {
+      "Name": "06_bl_dark_muscularity",
+      "BaseMaterial": "base\\characters\\common\\skin\\character_mat_instance\\male\\body\\male_06_bl_dark.mi",
+      "MaterialTemplate": "base\\materials\\skin.mt",
+      "EnableMask": false,
+      "Data": {
+        "Albedo": "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_circumcised_d01.xbm",
+        "SecondaryAlbedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedoInfluence": 0,
+        "SecondaryAlbedoTintColorInfluence": 0,
+        "Normal": "engine\\textures\\small_flat_normal.xbm",
+        "DetailNormal": "engine\\textures\\small_flat_normal.xbm",
+        "Roughness": "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_rm01.xbm",
+        "DetailRoughnessBiasMin": 1,
+        "DetailRoughnessBiasMax": 0.930000007,
+        "MicroDetailUVScale01": 5,
+        "MicroDetailUVScale02": 5,
+        "MicroDetail": "base\\characters\\common\\skin\\face\\microdetail_n.xbm",
+        "MicroDetailInfluence": 0.800000012,
+        "TintColorMask": "base\\characters\\common\\skin\\torso\\i0_000_base__tintcolormask.xbm",
+        "TintColor": {
+          "Red": 63,
+          "Green": 51,
+          "Blue": 39,
+          "Alpha": 255
+        },
+        "TintScale": 0.845000029,
+        "SkinProfile": "engine\\materials\\defaults\\default.sp",
+        "Detailmap_Stretch": "engine\\textures\\small_flat_normal.xbm",
+        "EmissiveMask": "engine\\textures\\editor\\black.xbm",
+        "EmissiveEV": 0,
+        "Detailmap_Squash": "engine\\textures\\small_flat_normal.xbm",
+        "CavityIntensity": 0.25,
+        "Bloodflow": "engine\\textures\\small_flat_normal.xbm",
+        "BloodColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "DetailNormalInfluence": 0.800000012
+      }
+    },
+    {
+      "Name": "01_ca_pale_00_warm_ivory",
+      "BaseMaterial": "arveth_retextureplayer\\materials\\male\\snowleopard_body.mi",
+      "MaterialTemplate": "engine\\materials\\metal_base.remt",
+      "EnableMask": false,
+      "Data": {
+        "BaseColor": "arveth_retextureplayer\\textures\\basepenis\\basepenis_snowleopard_d01.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_m01.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_r01.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_n01.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "02_ca_limestone_00_beige",
+      "BaseMaterial": "arveth_retextureplayer\\materials\\male\\tiger_body.mi",
+      "MaterialTemplate": "engine\\materials\\metal_base.remt",
+      "EnableMask": false,
+      "Data": {
+        "BaseColor": "arveth_retextureplayer\\textures\\basepenis\\basepenis_tiger_d01.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_m01.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_r01.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_n01.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "03_ca_senna_00_amber",
+      "BaseMaterial": "arveth_retextureplayer\\materials\\male\\fox_body.mi",
+      "MaterialTemplate": "engine\\materials\\metal_base.remt",
+      "EnableMask": false,
+      "Data": {
+        "BaseColor": "arveth_retextureplayer\\textures\\basepenis\\basepenis_fox_d01.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "base\\characters\\exoticsco\\fox\\textures\\fox_body_m01.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "base\\characters\\exoticsco\\fox\\textures\\fox_body_r01.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_n01.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1,
+        "FadeOutDistance": 9.99999994E-09
+      }
+    },
+    {
+      "Name": "03_ca_senna_01_honey",
+      "BaseMaterial": "arveth_retextureplayer\\materials\\male\\wolf_body.mi",
+      "MaterialTemplate": "engine\\materials\\metal_base.remt",
+      "EnableMask": false,
+      "Data": {
+        "BaseColor": "arveth_retextureplayer\\textures\\basepenis\\basepenis_wolf_d01.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "base\\characters\\exoticsco\\fox\\textures\\fox_body_m01.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "base\\characters\\exoticsco\\fox\\textures\\fox_body_r01.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_n01.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1,
+        "FadeOutDistance": 9.99999994E-09
+      }
+    },
+    {
+      "Name": "03_ca_senna_02_band",
+      "BaseMaterial": "arveth_retextureplayer\\materials\\male\\fennec_body.mi",
+      "MaterialTemplate": "engine\\materials\\metal_base.remt",
+      "EnableMask": false,
+      "Data": {
+        "BaseColor": "arveth_retextureplayer\\textures\\basepenis\\basepenis_fennec_d01.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "base\\characters\\exoticsco\\fox\\textures\\fox_body_m01.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "base\\characters\\exoticsco\\fox\\textures\\fox_body_r01.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_n01.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1,
+        "FadeOutDistance": 9.99999994E-09
+      }
+    },
+    {
+      "Name": "04_ca_almond_00_umber",
+      "BaseMaterial": "arveth_retextureplayer\\materials\\male\\jaguar_body.mi",
+      "MaterialTemplate": "engine\\materials\\metal_base.remt",
+      "EnableMask": false,
+      "Data": {
+        "BaseColor": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_d01.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_m01.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "base\\characters\\common\\player_base_bodies\\player_female_average\\jaguar\\textures\\jaguar_body_r01.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "arveth_retextureplayer\\textures\\basepenis\\basepenis_jaguar_n01.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    }
+  ],
+  "TexturesList": [
+    "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_circumcised_n01.xbm",
+    "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_rm01.xbm",
+    "base\\characters\\common\\character_customisation_items\\items\\genitals\\textures\\i0_000_pma_c__basepenis_circumcised_d01.xbm"
+  ],
+  "MaterialTemplates": [
+    {
+      "Name": "engine\\materials\\metal_base.remt",
+      "EnableMask": true,
+      "Data": {
+        "BaseColor": "engine\\textures\\editor\\grey.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "engine\\textures\\editor\\black.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "engine\\textures\\editor\\normal.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "engine\\materials\\metal_base.remt",
+      "EnableMask": true,
+      "Data": {
+        "BaseColor": "engine\\textures\\editor\\grey.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "engine\\textures\\editor\\black.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "engine\\textures\\editor\\normal.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "engine\\materials\\metal_base.remt",
+      "EnableMask": true,
+      "Data": {
+        "BaseColor": "engine\\textures\\editor\\grey.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "engine\\textures\\editor\\black.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "engine\\textures\\editor\\normal.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "engine\\materials\\metal_base.remt",
+      "EnableMask": true,
+      "Data": {
+        "BaseColor": "engine\\textures\\editor\\grey.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "engine\\textures\\editor\\black.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "engine\\textures\\editor\\normal.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "engine\\materials\\metal_base.remt",
+      "EnableMask": true,
+      "Data": {
+        "BaseColor": "engine\\textures\\editor\\grey.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "engine\\textures\\editor\\black.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "engine\\textures\\editor\\normal.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "engine\\materials\\metal_base.remt",
+      "EnableMask": true,
+      "Data": {
+        "BaseColor": "engine\\textures\\editor\\grey.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "engine\\textures\\editor\\black.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "engine\\textures\\editor\\normal.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "engine\\materials\\multilayered.mt",
+      "EnableMask": false,
+      "Data": {
+        "GlobalNormal": "engine\\textures\\editor\\normal.xbm",
+        "MultilayerMask": "engine\\materials\\defaults\\multilayer_default.mlmask",
+        "MultilayerSetup": "engine\\materials\\defaults\\multilayer_default.mlsetup",
+        "GlobalNormalIntensity": 1,
+        "GlobalNormalUVScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 0,
+          "W": 0
+        },
+        "GlobalNormalUVBias": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "MaskAtlas": "",
+        "MaskTiles": null,
+        "Layers": null,
+        "LayersStartIndex": 0,
+        "SurfaceTexAspectRatio": 0,
+        "MaskToTileScale": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "MaskTileSize": 0,
+        "MaskAtlasDims": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "MaskBaseResolution": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "SetupLayerMask": 0,
+        "NormalsTextureDDXYMultiplier": 1,
+        "MicroblendsTextureDDXYMultiplier": 1
+      }
+    },
+    {
+      "Name": "engine\\materials\\multilayered.mt",
+      "EnableMask": false,
+      "Data": {
+        "GlobalNormal": "engine\\textures\\editor\\normal.xbm",
+        "MultilayerMask": "engine\\materials\\defaults\\multilayer_default.mlmask",
+        "MultilayerSetup": "engine\\materials\\defaults\\multilayer_default.mlsetup",
+        "GlobalNormalIntensity": 1,
+        "GlobalNormalUVScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 0,
+          "W": 0
+        },
+        "GlobalNormalUVBias": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "MaskAtlas": "",
+        "MaskTiles": null,
+        "Layers": null,
+        "LayersStartIndex": 0,
+        "SurfaceTexAspectRatio": 0,
+        "MaskToTileScale": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "MaskTileSize": 0,
+        "MaskAtlasDims": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "MaskBaseResolution": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "W": 0
+        },
+        "SetupLayerMask": 0,
+        "NormalsTextureDDXYMultiplier": 1,
+        "MicroblendsTextureDDXYMultiplier": 1
+      }
+    },
+    {
+      "Name": "base\\materials\\skin.mt",
+      "EnableMask": true,
+      "Data": {
+        "Albedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedoInfluence": 0,
+        "SecondaryAlbedoTintColorInfluence": 0,
+        "Normal": "engine\\textures\\small_flat_normal.xbm",
+        "DetailNormal": "engine\\textures\\small_flat_normal.xbm",
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "DetailRoughnessBiasMin": 1,
+        "DetailRoughnessBiasMax": 0.680000007,
+        "MicroDetailUVScale01": 10,
+        "MicroDetailUVScale02": 10,
+        "MicroDetail": "base\\characters\\common\\skin\\face\\microdetail_n.xbm",
+        "MicroDetailInfluence": 1,
+        "TintColorMask": "base\\characters\\common\\skin\\torso\\i0_000_base__tintcolormask.xbm",
+        "TintColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "TintScale": 0,
+        "SkinProfile": "engine\\materials\\defaults\\default.sp",
+        "Detailmap_Stretch": "engine\\textures\\small_flat_normal.xbm",
+        "EmissiveMask": "engine\\textures\\editor\\black.xbm",
+        "EmissiveEV": 0,
+        "Detailmap_Squash": "engine\\textures\\small_flat_normal.xbm",
+        "CavityIntensity": 0.25,
+        "Bloodflow": "engine\\textures\\editor\\white.xbm",
+        "BloodColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "DetailNormalInfluence": 0
+      }
+    },
+    {
+      "Name": "base\\materials\\skin.mt",
+      "EnableMask": true,
+      "Data": {
+        "Albedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedoInfluence": 0,
+        "SecondaryAlbedoTintColorInfluence": 0,
+        "Normal": "engine\\textures\\small_flat_normal.xbm",
+        "DetailNormal": "engine\\textures\\small_flat_normal.xbm",
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "DetailRoughnessBiasMin": 1,
+        "DetailRoughnessBiasMax": 0.680000007,
+        "MicroDetailUVScale01": 10,
+        "MicroDetailUVScale02": 10,
+        "MicroDetail": "base\\characters\\common\\skin\\face\\microdetail_n.xbm",
+        "MicroDetailInfluence": 1,
+        "TintColorMask": "base\\characters\\common\\skin\\torso\\i0_000_base__tintcolormask.xbm",
+        "TintColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "TintScale": 0,
+        "SkinProfile": "engine\\materials\\defaults\\default.sp",
+        "Detailmap_Stretch": "engine\\textures\\small_flat_normal.xbm",
+        "EmissiveMask": "engine\\textures\\editor\\black.xbm",
+        "EmissiveEV": 0,
+        "Detailmap_Squash": "engine\\textures\\small_flat_normal.xbm",
+        "CavityIntensity": 0.25,
+        "Bloodflow": "engine\\textures\\editor\\white.xbm",
+        "BloodColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "DetailNormalInfluence": 0
+      }
+    },
+    {
+      "Name": "base\\materials\\skin.mt",
+      "EnableMask": true,
+      "Data": {
+        "Albedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedoInfluence": 0,
+        "SecondaryAlbedoTintColorInfluence": 0,
+        "Normal": "engine\\textures\\small_flat_normal.xbm",
+        "DetailNormal": "engine\\textures\\small_flat_normal.xbm",
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "DetailRoughnessBiasMin": 1,
+        "DetailRoughnessBiasMax": 0.680000007,
+        "MicroDetailUVScale01": 10,
+        "MicroDetailUVScale02": 10,
+        "MicroDetail": "base\\characters\\common\\skin\\face\\microdetail_n.xbm",
+        "MicroDetailInfluence": 1,
+        "TintColorMask": "base\\characters\\common\\skin\\torso\\i0_000_base__tintcolormask.xbm",
+        "TintColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "TintScale": 0,
+        "SkinProfile": "engine\\materials\\defaults\\default.sp",
+        "Detailmap_Stretch": "engine\\textures\\small_flat_normal.xbm",
+        "EmissiveMask": "engine\\textures\\editor\\black.xbm",
+        "EmissiveEV": 0,
+        "Detailmap_Squash": "engine\\textures\\small_flat_normal.xbm",
+        "CavityIntensity": 0.25,
+        "Bloodflow": "engine\\textures\\editor\\white.xbm",
+        "BloodColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "DetailNormalInfluence": 0
+      }
+    },
+    {
+      "Name": "base\\materials\\skin.mt",
+      "EnableMask": true,
+      "Data": {
+        "Albedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedoInfluence": 0,
+        "SecondaryAlbedoTintColorInfluence": 0,
+        "Normal": "engine\\textures\\small_flat_normal.xbm",
+        "DetailNormal": "engine\\textures\\small_flat_normal.xbm",
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "DetailRoughnessBiasMin": 1,
+        "DetailRoughnessBiasMax": 0.680000007,
+        "MicroDetailUVScale01": 10,
+        "MicroDetailUVScale02": 10,
+        "MicroDetail": "base\\characters\\common\\skin\\face\\microdetail_n.xbm",
+        "MicroDetailInfluence": 1,
+        "TintColorMask": "base\\characters\\common\\skin\\torso\\i0_000_base__tintcolormask.xbm",
+        "TintColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "TintScale": 0,
+        "SkinProfile": "engine\\materials\\defaults\\default.sp",
+        "Detailmap_Stretch": "engine\\textures\\small_flat_normal.xbm",
+        "EmissiveMask": "engine\\textures\\editor\\black.xbm",
+        "EmissiveEV": 0,
+        "Detailmap_Squash": "engine\\textures\\small_flat_normal.xbm",
+        "CavityIntensity": 0.25,
+        "Bloodflow": "engine\\textures\\editor\\white.xbm",
+        "BloodColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "DetailNormalInfluence": 0
+      }
+    },
+    {
+      "Name": "base\\materials\\skin.mt",
+      "EnableMask": true,
+      "Data": {
+        "Albedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedoInfluence": 0,
+        "SecondaryAlbedoTintColorInfluence": 0,
+        "Normal": "engine\\textures\\small_flat_normal.xbm",
+        "DetailNormal": "engine\\textures\\small_flat_normal.xbm",
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "DetailRoughnessBiasMin": 1,
+        "DetailRoughnessBiasMax": 0.680000007,
+        "MicroDetailUVScale01": 10,
+        "MicroDetailUVScale02": 10,
+        "MicroDetail": "base\\characters\\common\\skin\\face\\microdetail_n.xbm",
+        "MicroDetailInfluence": 1,
+        "TintColorMask": "base\\characters\\common\\skin\\torso\\i0_000_base__tintcolormask.xbm",
+        "TintColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "TintScale": 0,
+        "SkinProfile": "engine\\materials\\defaults\\default.sp",
+        "Detailmap_Stretch": "engine\\textures\\small_flat_normal.xbm",
+        "EmissiveMask": "engine\\textures\\editor\\black.xbm",
+        "EmissiveEV": 0,
+        "Detailmap_Squash": "engine\\textures\\small_flat_normal.xbm",
+        "CavityIntensity": 0.25,
+        "Bloodflow": "engine\\textures\\editor\\white.xbm",
+        "BloodColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "DetailNormalInfluence": 0
+      }
+    },
+    {
+      "Name": "base\\materials\\skin.mt",
+      "EnableMask": true,
+      "Data": {
+        "Albedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedo": "engine\\textures\\editor\\white.xbm",
+        "SecondaryAlbedoInfluence": 0,
+        "SecondaryAlbedoTintColorInfluence": 0,
+        "Normal": "engine\\textures\\small_flat_normal.xbm",
+        "DetailNormal": "engine\\textures\\small_flat_normal.xbm",
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "DetailRoughnessBiasMin": 1,
+        "DetailRoughnessBiasMax": 0.680000007,
+        "MicroDetailUVScale01": 10,
+        "MicroDetailUVScale02": 10,
+        "MicroDetail": "base\\characters\\common\\skin\\face\\microdetail_n.xbm",
+        "MicroDetailInfluence": 1,
+        "TintColorMask": "base\\characters\\common\\skin\\torso\\i0_000_base__tintcolormask.xbm",
+        "TintColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "TintScale": 0,
+        "SkinProfile": "engine\\materials\\defaults\\default.sp",
+        "Detailmap_Stretch": "engine\\textures\\small_flat_normal.xbm",
+        "EmissiveMask": "engine\\textures\\editor\\black.xbm",
+        "EmissiveEV": 0,
+        "Detailmap_Squash": "engine\\textures\\small_flat_normal.xbm",
+        "CavityIntensity": 0.25,
+        "Bloodflow": "engine\\textures\\editor\\white.xbm",
+        "BloodColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0
+        },
+        "DetailNormalInfluence": 0
+      }
+    },
+    {
+      "Name": "engine\\materials\\metal_base.remt",
+      "EnableMask": true,
+      "Data": {
+        "BaseColor": "engine\\textures\\editor\\grey.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "engine\\textures\\editor\\black.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "engine\\textures\\editor\\normal.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "engine\\materials\\metal_base.remt",
+      "EnableMask": true,
+      "Data": {
+        "BaseColor": "engine\\textures\\editor\\grey.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "engine\\textures\\editor\\black.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "engine\\textures\\editor\\normal.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "engine\\materials\\metal_base.remt",
+      "EnableMask": true,
+      "Data": {
+        "BaseColor": "engine\\textures\\editor\\grey.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "engine\\textures\\editor\\black.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "engine\\textures\\editor\\normal.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "engine\\materials\\metal_base.remt",
+      "EnableMask": true,
+      "Data": {
+        "BaseColor": "engine\\textures\\editor\\grey.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "engine\\textures\\editor\\black.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "engine\\textures\\editor\\normal.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "engine\\materials\\metal_base.remt",
+      "EnableMask": true,
+      "Data": {
+        "BaseColor": "engine\\textures\\editor\\grey.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "engine\\textures\\editor\\black.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "engine\\textures\\editor\\normal.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    },
+    {
+      "Name": "engine\\materials\\metal_base.remt",
+      "EnableMask": true,
+      "Data": {
+        "BaseColor": "engine\\textures\\editor\\grey.xbm",
+        "BaseColorScale": {
+          "X": 1,
+          "Y": 1,
+          "Z": 1,
+          "W": 0
+        },
+        "Metalness": "engine\\textures\\editor\\black.xbm",
+        "MetalnessScale": 1,
+        "MetalnessBias": 0,
+        "Roughness": "engine\\textures\\editor\\white.xbm",
+        "RoughnessScale": 1,
+        "RoughnessBias": 0,
+        "Normal": "engine\\textures\\editor\\normal.xbm",
+        "NormalStrength": 1,
+        "AlphaThreshold": 0.379999995,
+        "Emissive": "engine\\textures\\editor\\black.xbm",
+        "EmissiveLift": 0,
+        "EmissiveEV": 0,
+        "EmissiveEVRaytracingBias": 0,
+        "EmissiveDirectionality": 0,
+        "EnableRaytracedEmissive": 1,
+        "EmissiveColor": {
+          "Red": 0,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 255
+        },
+        "LayerTile": 1
+      }
+    }
+  ],
+  "Appearances": {
+    "01_ca_pale0": [
+      "01_ca_pale"
+    ],
+    "05_bl_espresso1": [
+      "05_bl_espresso"
+    ],
+    "02_ca_limestone2": [
+      "02_ca_limestone"
+    ],
+    "03_ca_senna3": [
+      "03_ca_senna"
+    ],
+    "04_ca_almond4": [
+      "04_ca_almond"
+    ],
+    "06_bl_dark5": [
+      "06_bl_dark"
+    ],
+    "npc_05_plastic_while6": [
+      "npc_01_ca_pale_dirt"
+    ],
+    "npc_06_plastic_dark7": [
+      "npc_02_black_dirt"
+    ],
+    "01_ca_pale_muscularity8": [
+      "01_ca_pale_muscularity"
+    ],
+    "02_ca_limestone_muscularity9": [
+      "02_ca_limestone_muscularity"
+    ],
+    "03_ca_senna_muscularity10": [
+      "03_ca_senna_muscularity"
+    ],
+    "04_ca_almond_muscularity11": [
+      "04_ca_almond_muscularity"
+    ],
+    "05_bl_espresso_muscularity12": [
+      "05_bl_espresso_muscularity"
+    ],
+    "06_bl_dark_muscularity13": [
+      "06_bl_dark_muscularity"
+    ],
+    "01_ca_pale_00_warm_ivory14": [
+      "01_ca_pale_00_warm_ivory"
+    ],
+    "02_ca_limestone_00_beige15": [
+      "02_ca_limestone_00_beige"
+    ],
+    "03_ca_senna_00_amber16": [
+      "03_ca_senna_00_amber"
+    ],
+    "03_ca_senna_01_honey17": [
+      "03_ca_senna_01_honey"
+    ],
+    "03_ca_senna_02_band18": [
+      "03_ca_senna_02_band"
+    ],
+    "04_ca_almond_00_umber19": [
+      "04_ca_almond_00_umber"
+    ]
+  }
+}
