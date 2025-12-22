@@ -849,6 +849,9 @@
           "width": 98,
           "height": 98
         },
+        "cellSize": "$ItemCellSize",
+        "location": "left_hand",
+        "gemSocketFilename": "PANEL/gemsocket",
         "backgroundFilename": "PANEL/Inventory/Inventory_Paperdoll_Ring",
         "navigation": {
           "left": {
@@ -888,6 +891,7 @@
         }
       }
     },
+
     {
       "type": "InventorySlotWidget",
       "name": "slot_feet",
