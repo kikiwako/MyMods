@@ -7,31 +7,55 @@ local stats = {
 }
 
 function getRules()
-    print(rune("tal"))
-
     local rules = {{
-        codes = "allitems",
-        location = anywhere,
-        itype = itemTypes({"Weapon", "Any_Armor"}),
-        suffix = " {white}({ilvl} | {rarity})"
-    }, {
         codes = "allitems",
         ethereal = true,
         location = anywhere,
         itype = itemTypes({"Weapon", "Any_Armor"}),
-        suffix = " {gray}Eth."
+        suffix = "{gray}"
     }, {
+        codes = "allitems",
+        ethereal = false,
+        location = anywhere,
+        itype = itemTypes({"Weapon", "Any_Armor"}),
+        suffix = "{white}"
+    }}
+
+    appendArray(rules, suffixRarity())
+
+    appendArray(rules, {{
+        codes = "allitems",
+        location = anywhere,
+        itype = itemTypes({"Weapon", "Any_Armor"}),
+        suffix = "-{ilvl}"
+    }})
+
+    appendArray(rules, suffixSocketCount())
+    appendArray(rules, suffixRuneHelpers())
+
+    return rules
+end
+
+function suffixRarity()
+    return {{
         codes = "allitems",
         rarity = 0,
         location = anywhere,
         itype = itemTypes({"Any"}),
-        suffix = " {gray}+"
+        suffix = " 1"
+    }, {
+        codes = "allitems",
+        rarity = 1,
+        location = anywhere,
+        itype = itemTypes({"Any"}),
+        suffix = "2"
+    }, {
+        codes = "allitems",
+        rarity = 2,
+        location = anywhere,
+        itype = itemTypes({"Any"}),
+        suffix = "3"
     }}
-
-    appendArray(rules, suffixSocketCount())
-    -- appendArray(rules, suffixRuneHelpers())
-
-    return rules
 end
 
 function appendArray(targetArray, sourceArray)
@@ -40,152 +64,91 @@ function appendArray(targetArray, sourceArray)
     end
 end
 
-function suffixRuneHelpers()
-    return { -- {
-    --     codes = "r01",
-    --     itype = 74,
-    --     location = {"onplayer"},
-    --     suffix = " {gray}> Eld"
-    -- }, {
-    --     codes = "r02",
-    --     itype = 74,
-    --     location = {"onplayer"},
-    --     suffix = " {gray}> Tir"
-    -- }, {
-    --     codes = "r03",
-    --     itype = 74,
-    --     location = {"onplayer"},
-    --     suffix = " {gray}> Nef"
-    -- }, {
-    --     codes = "r04",
-    --     itype = 74,
-    --     location = {"onplayer"},
-    --     suffix = " {gray}> Eth"
-    -- }, {
-    --     codes = "r05",
-    --     itype = 74,
-    --     location = {"onplayer"},
-    --     suffix = " {gray}> Ith"
-    -- }, {
-    --     codes = "r06",
-    --     itype = 74,
-    --     location = {"onplayer"},
-    --     suffix = " {gray}> Tal"
-    -- }, 
-    {
-        -- codes = rune("tal"),
-        codes = "allitems",
-        -- stat = {
-        --     index = 94,
-        --     op = "==",
-        --     value = "17"
-        -- },
-        -- itype = itemType("Rune"),
+function getRuneObj(name, text)
+    return {
+        codes = rune(string.lower(name)),
+        itype = 74,
         location = {"onplayer"},
-        suffix = " {gray}> Ral {stat={index=92}}"
-    } -- {
-    --     codes = "r08",
-    --     itype = 74,
-    --     location = {"onplayer"},
-    --     suffix = " {gray}> Ort"
-    -- }, {
-    --     codes = "r09",
-    --     itype = 74,
-    --     location = {"onplayer"},
-    --     suffix = " {gray}> Thul"
-    -- }, {
-    --     codes = "r10",
-    --     itype = 74,
-    --     location = {"onplayer"},
-    --     suffix = " {yellow}> {gray} Amn"
-    -- }, {
-    --     codes = "r11",
-    --     itype = 74,
-    --     location = {"onplayer"},
-    --     suffix = " {purple}> {gray} Sol"
-    -- }, {
-    --     codes = "r12",
-    --     itype = 74,
-    --     location = {"onplayer"},
-    --     suffix = " {blue}> {gray} Shael"
-    -- }, {
-    --     codes = "r13",
-    --     itype = 74,
-    --     location = {"onplayer"},
-    --     suffix = " {red}> {gray} Dol"
-    -- }, {
-    --     codes = "r14",
-    --     itype = 74,
-    --     location = {"onplayer"},
-    --     suffix = " {green}> {gray} Hel"
-    -- }, {
-    --     codes = "r15",
-    --     itype = 74,
-    --     location = {"onplayer"},
-    --     suffix = " {white}> {gray} Io"
-    -- }
+        suffix = text
     }
+end
+
+function suffixRuneHelpers()
+    return {getRuneObj("El", " {gray}> Eld"), getRuneObj("Eld", " {gray}> Tir"), getRuneObj("Tir", " {gray}> Nef"),
+            getRuneObj("Nef", " {gray}> Eth"), getRuneObj("Eth", " {gray}> Ith"), getRuneObj("Ith", " {gray}> Tal"),
+            getRuneObj("Tal", " {gray}> Ral"), getRuneObj("Ral", " {gray}> Ort"), getRuneObj("Ort", " {gray}> Thul"),
+            getRuneObj("Thul", " {yellow}> {gray} Amn"), getRuneObj("Amn", " {purple}> {gray} Sol"),
+            getRuneObj("Sol", " {blue}> {gray} Shael"), getRuneObj("Shael", " {red}> {gray} Dol"),
+            getRuneObj("Dol", " {green}> {gray} Hel"), getRuneObj("Hel", " {white}> {gray} Io"),
+            getRuneObj("Io", " {yellow}> {gray} Lum"), getRuneObj("Lum", " {purple}> {gray} Ko"),
+            getRuneObj("Ko", " {blue}> {gray} Fal"), getRuneObj("Fal", " {red}> {gray} Lem"),
+            getRuneObj("Lem", " {green}> {gray} Pul"), getRuneObj("Pul", " {white}> {gray} Um"),
+            getRuneObj("Um", " {yellow}> {gray} Mal"), getRuneObj("Mal", " {purple}> {gray} Ist"),
+            getRuneObj("Ist", " {blue}> {gray} Gul"), getRuneObj("Gul", " {red}> {gray} Vex"),
+            getRuneObj("Vex", " {green}> {gray} Ohm"), getRuneObj("Ohm", " {white}> {gray} Lo"),
+            getRuneObj("Lo", " {yellow}> {gray} Sur"), getRuneObj("Sur", " {purple}> {gray} Ber"),
+            getRuneObj("Ber", " {blue}> {gray} Jah"), getRuneObj("Jah", " {red}> {gray} Cham"),
+            getRuneObj("Cham", " {green}> {gray} Zod"), getRuneObj("Zod", " {gray}(holy shit a Zod!)")}
 end
 
 function suffixSocketCount()
     return { -- Display socket count in gray, to the right of item name, [x/m]
     {
         codes = "allitems",
-        maxsock = "1+",
-        sockets = "0",
-        location = anywhere,
-        itype = itemTypes({"Weapon", "Any_Armor"}),
-        suffix = "{gray}[{sockets}"
-    }, {
-        codes = "allitems",
-        sockets = "1+",
         maxsock = false,
+        sockets = "1+",
         location = anywhere,
         itype = itemTypes({"Weapon", "Any_Armor"}),
-        suffix = "{gray}[{white}{sockets}"
+        suffix = "{white}[{sockets}]"
     }, {
         codes = "allitems",
         maxsock = true,
         sockets = "1+",
         location = anywhere,
         itype = itemTypes({"Weapon", "Any_Armor"}),
-        suffix = "{gray}[{tan}{sockets}"
+        suffix = "{white}[{tan}{sockets}{white}]"
     }, {
         codes = "allitems",
         maxsock = "1",
+        sockets = "0",
         location = anywhere,
         itype = itemTypes({"Weapon", "Any_Armor"}),
-        suffix = "{gray}/1]"
+        suffix = "{grey}[1]"
     }, {
         codes = "allitems",
         maxsock = "2",
+        sockets = "0",
         location = anywhere,
         itype = itemTypes({"Weapon", "Any_Armor"}),
-        suffix = "{gray}/2]"
+        suffix = "{grey}[2]"
     }, {
         codes = "allitems",
         maxsock = "3",
+        sockets = "0",
         location = anywhere,
         itype = itemTypes({"Weapon", "Any_Armor"}),
-        suffix = "{gray}/3]"
+        suffix = "{grey}[3]"
     }, {
         codes = "allitems",
         maxsock = "4",
+        sockets = "0",
         location = anywhere,
         itype = itemTypes({"Weapon", "Any_Armor"}),
-        suffix = "{gray}/4]"
+        suffix = "{grey}[4]"
     }, {
         codes = "allitems",
         maxsock = "5",
+        sockets = "0",
         location = anywhere,
         itype = itemTypes({"Weapon", "Any_Armor"}),
-        suffix = "{gray}/5]"
+        suffix = "{grey}[5]"
     }, {
         codes = "allitems",
         maxsock = "6",
+        sockets = "0",
         location = anywhere,
         itype = itemTypes({"Weapon", "Any_Armor"}),
-        suffix = "{gray}/6]"
+        suffix = "{grey}[6]"
     }}
 end
 
@@ -196,7 +159,7 @@ local runeList = {
     nef = "r04",
     eth = "r05",
     ith = "r06",
-    tal = "R07",
+    tal = "r07",
     ral = "r08",
     ort = "r09",
     thul = "r10",
@@ -226,7 +189,7 @@ local runeList = {
 }
 
 function rune(name)
-    return runeList[name] or ""
+    return {runeList[name]} or {""}
 end
 
 local itemTypeList = {
