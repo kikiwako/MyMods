@@ -262,26 +262,26 @@
         }
       }
     },
-    /*{
-            "type": "TextBoxWidget", "name": "NextLevelXP",
-            "fields": {
-                "rect": { "x": 60, "y": 860, "width": 1270, "height": 80 },
-                "style": {
-                    "pointSize": "$LargeFontSize",
-                    "alignment": { "h": "right", "v": "top" }
-                },
-            }
-        },
-        {
-            "type": "TextBoxWidget", "name": "CurrentXP",
-            "fields": {
-                "rect": { "x": 62, "y": 860, "width": 1270, "height": 80 },
-                "style": {
-                    "pointSize": "$LargeFontSize",
-                    "alignment": { "h": "left", "v": "top" }
-                },
-            }
-        },*/
+    // {
+    //         "type": "TextBoxWidget", "name": "NextLevelXP",
+    //         "fields": {
+    //             "rect": { "x": 60, "y": 860, "width": 1270, "height": 80 },
+    //             "style": {
+    //                 "pointSize": "$LargeFontSize",
+    //                 "alignment": { "h": "right", "v": "top" }
+    //             },
+    //         }
+    //     },
+    //     {
+    //         "type": "TextBoxWidget", "name": "CurrentXP",
+    //         "fields": {
+    //             "rect": { "x": 62, "y": 860, "width": 1270, "height": 80 },
+    //             "style": {
+    //                 "pointSize": "$LargeFontSize",
+    //                 "alignment": { "h": "left", "v": "top" }
+    //             },
+    //         }
+    //     },
     // Base stats
     {
       "type": "TextBoxWidget",
