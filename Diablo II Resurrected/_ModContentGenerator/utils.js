@@ -72,6 +72,24 @@ const updateChildPosition = (newData, name, x, y, w, h) => {
     if (y != undefined) newData.children[foundIndex].fields.rect.height = h;
 }
 
+const insertChildAfterChild = (newData, name, value) => {
+    let foundIndex = -1;
+
+    const child = newData.children.find((c, i) => {
+        if (c.name === name) {
+            foundIndex = i;
+            return true;
+        }
+    });
+
+    if (foundIndex === -1) {
+        console.error("Child with name " + name + " not found");
+        return child;
+    }
+
+    newData.children.splice(foundIndex + 1, 0, value);
+}
+
 const updateNode = (newData, values) => {
     if (typeof values === 'object') {
         newData = MergeRecursive(newData, values);
@@ -118,10 +136,43 @@ const removeChild = (newData, name) => {
     }
 }
 
+const getReorderedChildren = (newData, nameList) => {
+
+    if (!newData || !Array.isArray(newData.children)) return newData;
+    if (!Array.isArray(nameList) || nameList.length === 0) return newData;
+
+    const used = new Set();
+    const nameToChild = new Map();
+    newData.children.forEach((c) => {
+        if (c && typeof c.name === 'string') nameToChild.set(c.name, c);
+    });
+
+    const reordered = [];
+    for (const name of nameList) {
+        if (used.has(name)) continue;
+        if (nameToChild.has(name)) {
+            reordered.push(nameToChild.get(name));
+            used.add(name);
+        } else {
+            console.warn("Child with name " + name + " not found");
+        }
+    }
+
+    // Append any children not mentioned in nameList, preserving original order
+    for (const c of newData.children) {
+        if (!used.has(c.name)) reordered.push(c);
+    }
+
+    return reordered;
+
+}
+
 export {
     updateChild,
     updateNode,
     updateChildPosition,
+    getReorderedChildren,
     setChild,
+    insertChildAfterChild,
     removeChild
 };
