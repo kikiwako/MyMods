@@ -1,23 +1,26 @@
 /*
 * Recursively merge properties of two objects 
+  obj2 has priority and overwrites obj1 for conflicts
   https://stackoverflow.com/questions/171251/how-can-i-merge-properties-of-two-javascript-objects
 */
 function MergeRecursive(obj1, obj2) {
 
-    for (var p in obj2) {
+    for (var k in obj2) {
         try {
             // Property in destination object set; update its value.
-            if (obj2[p].constructor == Object) {
-                obj1[p] = MergeRecursive(obj1[p], obj2[p]);
+            if (obj2[k].constructor == Object) {
+                obj1[k] = MergeRecursive(obj1[k], obj2[k]);
 
+            } else if ([obj1[k], obj2[k]].includes("DELETE")) {
+                delete obj1[k];
+                delete obj2[k];
             } else {
-                obj1[p] = obj2[p];
-
+                obj1[k] = obj2[k];
             }
 
         } catch (e) {
             // Property in destination object not set; create it and set its value.
-            obj1[p] = obj2[p];
+            obj1[k] = obj2[k];
 
         }
     }
