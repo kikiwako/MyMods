@@ -7,7 +7,7 @@ const getUpdatedPlayerInventoryOriginalLayoutHD = (data) => {
         fields: {
             rect: { x: 267, y: 562 }
         },
-        children: ""
+        children: "DELETE"
     });
 
 
@@ -30,7 +30,7 @@ const getUpdatedPlayerInventoryOriginalLayoutHD = (data) => {
             focusIndicatorOffset: { x: -2, y: 2 },
             navigation: {
                 left: { name: "slot_right_arm", panelBoundary: false },
-                up: "",
+                up: "DELETE",
                 right: { name: "slot_head" },
                 down: { name: "slot_neck" }
             }
@@ -43,7 +43,7 @@ const getUpdatedPlayerInventoryOriginalLayoutHD = (data) => {
             navigation: {
                 left: { panelBoundary: true },
                 up: { name: "Belt" },
-                down: ""
+                down: "DELETE"
             }
         }
     });
@@ -264,12 +264,10 @@ const getUpdatedPlayerInventoryOriginalLayoutHD = (data) => {
             "slot_head",
             "container_neck",
             "slot_neck",
+            "container_belt",
             "slot_belt",
-            "container_potions",
-            "Belt",
             "container_torso",
             "slot_torso",
-            "slot_belt",
             "container_right_arm",
             "slot_right_arm",
             "container_left_arm",
@@ -278,11 +276,12 @@ const getUpdatedPlayerInventoryOriginalLayoutHD = (data) => {
             "slot_right_hand",
             "container_left_hand",
             "slot_left_hand",
-            "container_belt",
             "container_feet",
             "slot_feet",
             "container_gloves",
             "slot_gloves",
+            "container_potions",
+            "Belt",
         ]
     )
 

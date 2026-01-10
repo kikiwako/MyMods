@@ -1,10 +1,10 @@
-import { updateChild, updateNode } from '../_ModContentGenerator/utils.js';
+import { getReorderedChildren, removeChild, updateChild, updateNode } from '../_ModContentGenerator/utils.js';
 
 const getUpdatedHirelingInventoryLayoutHD = (data) => {
     let newData = { ...data };
 
     updateNode(newData, {
-        basedOn: "",
+        basedOn: "DELETE",
         fields: {
             anchor: "$ConsoleLeftPanelAnchor",
             bowBackgroundFilename: "PANEL/Hireling/HireablePanel/Hireables_Paperdoll_Bow",
@@ -122,10 +122,10 @@ const getUpdatedHirelingInventoryLayoutHD = (data) => {
             rect: { x: 126, y: 937, width: 100, height: 30 },
             text: "@strchrlvl",
             style: {
-                pointSize: "$MediumFontSize",
+                pointSize: "$XMediumFontSize",
                 fontColor: "$FontColorWhite",
                 dropShadow: "$DefaultDropShadow",
-                alignment: { h: "left", v: "" }
+                alignment: { h: "left", v: "DELETE" }
             }
         }
     });
@@ -188,10 +188,11 @@ const getUpdatedHirelingInventoryLayoutHD = (data) => {
     updateChild(newData, "DamageTitle", {
         fields: {
             rect: { x: 104, y: 1269, width: 251, height: 59 },
-            text: "@strchrdmg",
             style: {
                 pointSize: "$SmallFontSize",
-            }
+            },
+            text: "@strchrskm",
+
         }
     });
 
@@ -214,7 +215,7 @@ const getUpdatedHirelingInventoryLayoutHD = (data) => {
                 fields: {
                     rect: { y: 0, width: 237, height: 59 },
                     style: {
-                        pointSize: "$SmallFontSize",
+                        pointSize: "$SmallPanelFontSize",
                     }
                 },
             });
@@ -233,7 +234,7 @@ const getUpdatedHirelingInventoryLayoutHD = (data) => {
     updateChild(newData, "ArmorClassTitle", {
         fields: {
             rect: { x: 104, y: 1353, width: 251, height: 59 },
-            text: "@strchrac",
+            text: "@strchrdef",
             style: {
                 pointSize: "$SmallFontSize",
             }
@@ -254,6 +255,12 @@ const getUpdatedHirelingInventoryLayoutHD = (data) => {
             rect: {
                 x: 608, y: 1103, width: 325,
             },
+            style: {
+                pointSize: "$SmallFontSize"
+            },
+            useAltStyleIfDoesntFit: "DELETE",
+            spacing: "DELETE",
+            altStyle: "DELETE"
         }
     });
 
@@ -267,73 +274,79 @@ const getUpdatedHirelingInventoryLayoutHD = (data) => {
     });
 
     updateChild(newData, "ColdResistanceTitle", {
-        "fields": {
-            "rect": {
-                "x": 608,
-                "Y": 1184,
-                "width": 325
+        fields: {
+            rect: {
+                x: 608,
+                y: 1184,
+                width: 325,
             },
-            "style": {
-                "fontColor": "$FontColorWhite",
-                "fontFace": "Formal",
-                "pointSize": "$SmallFontSize",
-                "alignment": {
-                    "h": "center",
-                    "v": "center"
+            style: {
+                fontColor: "$FontColorWhite",
+                fontFace: "Formal",
+                pointSize: "$SmallFontSize",
+                alignment: {
+                    h: "center",
+                    v: "center"
                 }
             },
-            "useAltStyleIfDoesntFit": false
+            useAltStyleIfDoesntFit: "DELETE",
+            altStyle: "DELETE"
         }
     });
 
     updateChild(newData, "ColdText", {
-        "fields": {
-            "rect": {
-                "x": 938,
-                "y": 1184,
-                "width": 113
+        fields: {
+            rect: {
+                x: 938,
+                y: 1184,
+                width: 113
             },
-            "style": {
-                "pointSize": "$SmallFontSize",
+            style: {
+                pointSize: "$SmallFontSize",
             }
         },
     });
 
     updateChild(newData, "LightningResistanceTitle", {
-        "fields": {
-            "rect": {
-                "x": 608,
-                "y": 1269,
-                "width": 325
+        fields: {
+            rect: {
+                x: 608,
+                y: 1269,
+                width: 325
             },
-            "useAltStyleIfDoesntFit": false
+            style: {
+                pointSize: "$SmallFontSize"
+            },
+            useAltStyleIfDoesntFit: "DELETE",
+            altStyle: "DELETE"
         }
     });
 
     updateChild(newData, "LightningText", {
-        "fields": {
-            "rect": {
-                "x": 938,
-                "y": 1269,
-                "width": 113
+        fields: {
+            rect: {
+                x: 938,
+                y: 1269,
+                width: 113
             },
-            "style": {
-                "pointSize": "$SmallFontSize",
+            style: {
+                pointSize: "$SmallFontSize",
             }
         },
     });
 
     updateChild(newData, "PoisonResistanceTitle", {
-        "fields": {
-            "rect": {
-                "x": 608,
-                "y": 1351,
-                "width": 325
+        fields: {
+            rect: {
+                x: 608,
+                y: 1351,
+                width: 325
             },
-            "style": {
-                "pointSize": "$SmallFontSize",
+            style: {
+                pointSize: "$SmallFontSize",
             },
-            "useAltStyleIfDoesntFit": false
+            useAltStyleIfDoesntFit: "DELETE",
+            altStyle: "DELETE"
         }
     });
 
@@ -571,6 +584,10 @@ const getUpdatedHirelingInventoryLayoutHD = (data) => {
                 }
             }
         });
+
+    newData.children = getReorderedChildren(newData, [
+        "Background",
+    ]);
 
     return newData;
 }

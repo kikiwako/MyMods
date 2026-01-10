@@ -5,10 +5,10 @@ import { getUpdatedPlayerInventoryOriginalLayoutHD } from './getUpdatedPlayerInv
 
 
 const files = {
-    // profilehHD: {
-    //     source: "/sources/_profilehd.json",
-    //     target: "/data/global/ui/layouts/controller/_profilehd.json"
-    // },
+    profilehHD: {
+        source: "/sources/_profilehd.json",
+        target: "/data/global/ui/layouts/controller/_profilehd.json"
+    },
     bankExpansionLayoutHD: {
         source: "/sources/bankexpansionlayouthd.json",
         target: "/data/global/ui/layouts/controller/bankexpansionlayouthd.json"
@@ -42,10 +42,10 @@ const files = {
 const applyChanges = (files) => {
     const newFiles = { ...files };
 
-    // newFiles.profilehHD.json.ConsoleLeftPanelAnchor = {
-    //     x: 0.521,
-    //     y: 0.387
-    // };
+    newFiles.profilehHD.json.ConsoleLeftPanelAnchor = {
+        x: 0.521,
+        y: 0.387
+    };
     // maybe remove SecondSetIconOffset
 
     newFiles.bankExpansionLayoutHD.json = getUpdatedBankExpansionLayoutHD(newFiles.bankExpansionLayoutHD.json);
@@ -148,6 +148,8 @@ const getUpdatedPlayerInventoryExpansionLayoutHD = (data) => {
         "WeaponSwapRightLegend",
     ]);
 
+    removeChild(newData, "background");
+
     return newData;
 }
 
@@ -211,6 +213,8 @@ const getUpdatedBankExpansionLayoutHD = (data) => {
 
     newData = getCommonBankLayoutUpdates(newData);
 
+    removeChild(newData, "BankTabs"); // remove old bank tabs
+
     newData.children.push(getDropdownListWidget());
     newData.children.push(getBankTabs());
 
@@ -219,15 +223,6 @@ const getUpdatedBankExpansionLayoutHD = (data) => {
             filename: "Controller/Panel/Stash/V2/StashPanelBG_Expanded"
         }
     });
-
-    // update(newData, "ConsoleLeftPanelAnchor", {
-    //     fields: {
-    //         rect: {
-    //             x: 0,
-    //             y: 0
-    //         }
-    //     }
-    // });
 
     updateChild(newData, "grid", {
         fields: {
@@ -277,8 +272,8 @@ const getCommonBankLayoutUpdates = (data) => {
         }
     });
 
-    updateChildPosition(newData, "gold_amount", background_x + 1393, background_y + 28);
-    updateChildPosition(newData, "gold_withdraw", background_x + 1343, background_y + 32);
+    updateChildPosition(newData, "gold_amount", background_x + 1393, background_y + 28, 270, 57);
+    updateChildPosition(newData, "gold_withdraw", background_x + 1343, background_y + 32, 317, 46);
     updateChildPosition(newData, "grid", background_x + 92, background_y + 295);
 
     return newData;
@@ -382,47 +377,47 @@ const getDropdownListWidget = () => {
 
 const getBankTabs = () => {
     return {
-        "type": "TabBarWidget",
-        "name": "BankTabs",
-        "fields": {
-            "rect": {
-                "x": -191,
-                "y": 9
+        type: "TabBarWidget",
+        name: "BankTabs",
+        fields: {
+            rect: {
+                x: -191,
+                y: 9
             },
-            "tabCount": 8,
-            "filename": "Controller/Panel/Stash/V2/StashTabs_Expanded",
-            "inactiveFrames": [1, 1, 1, 1, 1, 1, 1, 1],
-            "activeFrames": [0, 0, 0, 0, 0, 0, 0, 0],
-            "disabledFrames": [1, 1, 1, 1, 1, 1, 1, 1],
-            "textStrings": ["personal", "I", "II", "III", "IV", "V", "VI", "VII"],
-            "textStyle": {
-                "pointSize": "$MediumFontSize"
+            tabCount: 8,
+            filename: "Controller/Panel/Stash/V2/StashTabs_Expanded",
+            inactiveFrames: [1, 1, 1, 1, 1, 1, 1, 1],
+            activeFrames: [0, 0, 0, 0, 0, 0, 0, 0],
+            disabledFrames: [1, 1, 1, 1, 1, 1, 1, 1],
+            textStrings: ["personal", "I", "II", "III", "IV", "V", "VI", "VII"],
+            textStyle: {
+                pointSize: "$MediumFontSize"
             },
-            "focusIndicatorFilename": "Controller/HoverImages/StashTab_Hover_Expanded",
-            "focusIndicatorOffset": {
-                "x": 0,
-                "y": -6
+            focusIndicatorFilename: "Controller/HoverImages/StashTab_Hover_Expanded",
+            focusIndicatorOffset: {
+                x: 0,
+                y: -6
             },
-            "activeTextColor": "$TabsActiveTextColor",
-            "inactiveTextColor": "$TabsInactiveTextColor",
-            "tabSize": {
-                "x": 175,
-                "y": 120
+            activeTextColor: "$TabsActiveTextColor",
+            inactiveTextColor: "$TabsInactiveTextColor",
+            tabSize: {
+                x: 175,
+                y: 120
             },
-            "tabPadding": {
-                "x": 0,
-                "y": 0
+            tabPadding: {
+                x: 0,
+                y: 0
             },
-            "onSwitchTabMessage": "BankPanelMessage:SelectTab",
-            "tabLeftIndicatorPosition": {
-                "x": -42,
-                "y": -2
+            onSwitchTabMessage: "BankPanelMessage:SelectTab",
+            tabLeftIndicatorPosition: {
+                x: -42,
+                y: -2
             },
-            "tabRightIndicatorPosition": {
-                "x": 1435,
-                "y": -2
+            tabRightIndicatorPosition: {
+                x: 1435,
+                y: -2
             },
-            "focusOnMouseOver": true
+            focusOnMouseOver: true
         }
     }
 }
