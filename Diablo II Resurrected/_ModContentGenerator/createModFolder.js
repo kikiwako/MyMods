@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const generatedfolder = __dirname + "/generatedModFolder";
+const generatedfolder = __dirname + "/mod";
 
 const MAIN = async () => {
     const folderList = getFolderListOfParentDirectory();
