@@ -1,6 +1,0 @@
-I, Kikiwako, did not make this.
-
-this is just a copy of:
-https://www.nexusmods.com/diablo2resurrected/mods/871
-
-having it here makes things simpler for my mod manager
