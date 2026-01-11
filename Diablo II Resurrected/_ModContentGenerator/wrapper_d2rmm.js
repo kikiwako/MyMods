@@ -65,8 +65,16 @@ const getDataObjectsFromTxtTableFile = (filePath) => {
     };
 }
 
+const getSourcePath = (path) => {
+    const deepPath = CURRENT_FOLDER + "/sources/" + path;
+    if (fs.existsSync(deepPath)) return deepPath;
+
+    const shallowPath = CURRENT_FOLDER + "/sources/" + basename(path);
+    return shallowPath;
+}
+
 const WRAP_readJson = (filename) => {
-    const localSourcePath = CURRENT_FOLDER + "/sources/" + basename(filename);
+    const localSourcePath = getSourcePath(filename);
     return getObjectFromD2RJSON(localSourcePath);
 }
 
@@ -124,7 +132,7 @@ const getTxtTableFromData = (data) => {
 }
 
 const WRAP_readTsv = (filename) => {
-    const localSourcePath = CURRENT_FOLDER + "/sources/" + basename(filename);
+    const localSourcePath = getSourcePath(filename);
     return getDataObjectsFromTxtTableFile(localSourcePath)
 }
 
